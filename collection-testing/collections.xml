@@ -1,0 +1,3923 @@
+<collections>
+
+<collection Name="CRDR">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/clinicalresearchdata/
+http://it.emory.edu/ClinicalResearchData/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="Cancerquest">
+              <bad_urls><![CDATA[
+http://www.cancerquest.org/cfc/
+http://www.cancerquest.org/css/
+http://www.cancerquest.org/demo/
+http://www.cancerquest.org/dev/
+http://www.cancerquest.org/edit/
+http://www.cancerquest.org/helpers/
+http://www.cancerquest.org/includes/
+http://www.cancerquest.org/JavaScript/
+http://www.cancerquest.org/languages/
+http://www.cancerquest.org/multimedia/skeleton/
+http://www.cancerquest.org/perk/
+http://www.cancerquest.org/quiz_engine/
+http://www.cancerquest.org/scripts/
+http://www.cancerquest.org/SpryAssets/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.cancerquest.org/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="EmoryReport">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/EMORY_REPORT
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="IT">
+              <bad_urls><![CDATA[
+http://it.emory.edu/search.cfm$
+http://emorytest.service-now.com/
+https://emorytest.service-now.com/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/
+https://emory.service-now.com/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="O365">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/office365/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="PDRG">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://pediatrics.emory.edu/diabetes/
+http://www.pediatrics.emory.edu/diabetes/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="Pediatrics">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.pediatrics.emory.edu/
+http://pediatrics.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="Policies">
+              <bad_urls><![CDATA[
+contains:pdf
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://policies.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="Test">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="aahm">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/AAHM2013/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="academic_exchange_magazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/ACAD_EXCHANGE/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="accd">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://community-diversity.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="accessibility">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://accessibility.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="aces_project">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://psychiatry.emory.edu/aces_project/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="actsi">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://actsi.org/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="admissions">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/admission/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="aging">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://aging.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="alumni">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.alumni.emory.edu/
+https://www.alumni.emory.edu/
+http://alumni.emory.edu/
+https://alumni.emory.edu/
+http://www.alumni.emory.edu/emorywire/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="alumni_emorywire">
+              <bad_urls><![CDATA[
+http://www.alumni.emory.edu/emorywire/issues/
+http://www.alumni.emory.edu/news-and-media/wire/archives/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.alumni.emory.edu/emorywire/
+http://www.alumni.emory.edu/news-and-media/wire/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="anesthesiology_secureweb">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://secure.web.emory.edu/anesthesiology/intranet/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="annualfund">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.alumni.emory.edu/annualfund/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="annualgiving">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://annualgiving.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="anthro">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://anthropology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="apply">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://apply.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="arc">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://antibiotics.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="arthistory">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://arthistory.emory.edu/
+http://www.arthistory.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="arts">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://arts.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="artscompetition">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="best">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://best.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="biochemistry">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.biochem.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="biostatistics">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="bobbyjones">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://thefriendsofbobbyjones.org/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="business_intel">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://ebi.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="business_library">
+              <bad_urls><![CDATA[
+http://business.library.emory.edu/library-materials/collections/databases/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://business.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="campuslife">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/CAMPUS_LIFE/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="campuslife-osls">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://osls.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="campuslife_multicultural">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/MULTICULTURAL/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cancerquest_es">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cancerquest.emory.edu/es/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cancerstudies">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.sph.emory.edu/GCCS/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="candler">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://candler.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="canvas">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/TLT/
+http://it.emory.edu/tlt/
+http://canvas-support.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="careers">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cci">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cci.emory.edu/cms/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cer">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cer.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cfar">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cfar.emory.edu/
+http://www.sph.emory.edu/cms/departments_centers/centers/cfar/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="chd">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://phi.emory.edu/chd/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="chemistry_library">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://chemistry.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college">
+              <bad_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/
+http://www.college.emory.edu/home/academic/course/schedules/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/
+http://college.emory.edu/home/academic/course/schedules/index.html
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_atlas">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/atlas/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_coursedescriptions">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/descriptions/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_italian">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://italian.emory.edu/
+http://www.italian.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_medievalstudies">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.ila.emory.edu/medieval_studies/
+http://ila.emory.edu/medieval_studies/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_precollege">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/precollege/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010f">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/fall/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010sp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/spring/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010su">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/summer/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010su_6w1">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/summer/section/6W1/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010su_6w2">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/summer/section/6W2/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2010su_reg">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2010/summer/section/regular/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011f">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/fall/section/
+http://www.college.emory.edu/home/academic/course/schedules/2011/fall/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011sp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/spring/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011su">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/summer/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011su_6w1">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/summer/section/6W1/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011su_6w2">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/summer/section/6W2/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2011su_reg">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2011/summer/section/regular/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="college_schedule_2012sp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://college.emory.edu/home/academic/course/schedules/2012/spring/section/
+http://www.college.emory.edu/home/academic/course/schedules/2012/spring/section/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="commencement">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/COMMENCEMENT/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="communications">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://communications.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="communism_american_life">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://polisci.emory.edu/home/neh_2016/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="compliance">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://compliance.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="contemplative_sciences">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/contemplative/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="corelabs">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.corelabs.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="cphpr">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cphpr.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="creativity">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://creativity.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="dar">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.dar.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="datagovernance">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://datagovernance.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="default_collection">
+              <bad_urls><![CDATA[
+https://secure.web.emory.edu/radiology/intranet/faculty_and_staff/
+https://secure.web.emory.edu/whsc/culture/
+https://emorydev1.service-now.com/
+http://emorytest.service-now.com/
+#https://emorytest.service-now.com/
+http://staging.web.emory.edu/librariestemplate/draft-databases/
+https://secure.web.emory.edu/anesthesiology/intranet/
+http://www.nscor.emory.edu/
+www.nscor.emory.edu/
+https://vidyo.emory.edu/
+http://engage.emory.edu/
+http://pitts.emory.edu/dia/
+http://www.mathcs.emory.edu/seminar-flyers/
+http://www.mathcs.emory.edu/
+http://m.emory.edu/
+https://m.opus.emory.edu/
+http://www.molvis.org/molvis/external.cgi/
+http://www.alumni.emory.edu/emorywire/issues/
+http://www.alumni.emory.edu/news-and-media/wire/archives/
+http://college.emory.edu/main/news/news-center/index.php/gallery/php/
+http://legacy-etd.library.emory.edu/
+http://login.emory.edu/
+https://login.emory.edu/
+http://www.emory.edu/EMORY_REPORT/
+http://cassity.digitalscholarship.emory.edu/items/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="dept_medicine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://medicine.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="dermatology">
+              <bad_urls><![CDATA[
+http.dermatology.emory.edu/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://dermatology.emory.edu/
+http://www.dermatology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="devstudies">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://devstudies.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="document_services">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://docservices.emory.edu/
+http://www.docservices.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ecds">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://digitalscholarship.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ece">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.ece.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emergingindia">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://halleinstitute.emory.edu/india-summit/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emerituscollege">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/emeritus/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emory_heath_magazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://emoryhealthmagazine.emory.edu/
+http://whsc.emory.edu/home/publications/health-sciences/emory-health/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emory_magazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/EMORY_MAGAZINE/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emorycommons">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emoryhealthcare">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://www.emoryhealthcare.org/
+https://www.emoryhealthcare.org/sitemap.html
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emoryhealthcare_v2">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://www.emoryhealthcare.org/
+https://www.emoryhealthcare.org/sitemap.html
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emoryhistory">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emoryhistory.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emorymedicinemagazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://whsc.emory.edu/home/publications/medicine/emory-medicine/
+http://emorymedicinemagazine.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emorypublichealthmagazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://publichealthmagazine.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="emoryreport">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/EMORY_REPORT/
+http://www.emory.edu/emory_report/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="employee_council">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://employeecouncil.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="entice">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://entice.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="epd">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/EPD/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="epidemiology_pbb">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://pbbregistry.emory.edu/
+http://www.pbbregistry.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="equipped">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://aging.emory.edu/programs/equipped
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="equity_inclusion">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://equityandinclusion.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ersa">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.med.emory.edu/ersa/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ethics">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://ethics.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="events">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/events/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="eyecenter_atlas">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://eyecenter.emory.edu/atlas/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="facultycouncil">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://facultycouncil.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="filmstudies">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://filmstudies.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="finance">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.finance.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="financialaid">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://financialaid.emory.edu/
+http://studentaid.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="fsap">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://fsap.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="gamechangers">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/gamechangers/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="gctc">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://genetics.emory.edu/clinicaltrials/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="general_counsel">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.ogc.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="genetics">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://genetics.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="genetics_training">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://genetics.emory.edu/gc_training/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="geneticslab">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://geneticslab.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="globalprogramsupport">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://global.emory.edu/support/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="goizueta">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://goizueta.emory.edu/
+http://newsroom.goizueta.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="governmental_affairs">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="gradschool">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://gs.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="grady">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="graphicdesign">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://gdvp.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="gynob">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://gynob.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="halle">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://halleinstitute.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="hdot">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.hdot.org/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="health_innovation">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://hip.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="health_library">
+              <bad_urls><![CDATA[
+http://health.library.emory.edu/biomedical-resources/essentials/databases/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://health.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="health_magazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://whsc.emory.edu/home/publications/health-sciences/emory-health/
+http://emoryhealthmagazine.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="hip">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://hip.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="history">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://history.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="homecoming">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/homecoming/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="hopeclinic">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.hopeclinic.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="hr">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.hr.emory.edu/eu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="humanhealth">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://humanhealth.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="humanitarian_emergencies">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://che.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ila">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://ila.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="inside_oxford">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://inside.oxford.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="internalaudit">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://iad.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="international">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://international.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="international_eitw">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://international.emory.edu/magazine/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="investment">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://investment.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="issp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/isss/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="issp_orientation">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/isss/orientation/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="isss">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://isss.emory.edu/
+http://www.isss.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_CRD">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/ClinicalResearchData/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_kb">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://emory.service-now.com/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_security">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_servicenow">
+              <bad_urls><![CDATA[
+https://emory.service-now.com/status/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://emory.service-now.com/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_sn_dev">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://emorytest.service-now.com/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="it_svc_catalog">
+              <bad_urls><![CDATA[
+contains:showdoc.cfm
+contains:getfaqs.cfm
+http://emorytest.service-now.com/
+https://emorytest.service-now.com/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+contains:showdoc_std.cfm
+contains:getfaqs_std.cfm
+http://it.emory.edu/catalog/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="itsm">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="itunes">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://itunes.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="js">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://js.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="laney">
+              <bad_urls><![CDATA[
+http://global.emory.edu/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://gs.emory.edu/handbook/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="law_cslr">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://cslr.law.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="library-databases-business">
+              <bad_urls><![CDATA[
+http://business.library.emory.edu/research-learning/databases/index.php
+http://test.business.library.emory.edu/
+contains:?
+contains:&
+contains:#
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://business.library.emory.edu/research-learning/databases/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="library-databases-health">
+              <bad_urls><![CDATA[
+http://health.library.emory.edu/biomedical-resources/essentials/databases/index.php
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/$
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/index.php
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/index.html
+http://test.web.library.emory.edu/
+http://test.health.library.emory.edu/
+contains:?
+contains:&
+contains:#
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://health.library.emory.edu/biomedical-resources/essentials/databases/
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/
+regexpIgnoreCase:http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/*/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="library-databases-main">
+              <bad_urls><![CDATA[
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/index.php
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/find-journal-articles.html
+http://web.library.emory.edu/library-materials/collections/databases/index.php
+http://oxford.library.emory.edu/library-materials/databases/index.php
+http://health.library.emory.edu/biomedical-resources/databases/index.php
+http://web.library.emory.edu/library-materials/collections/databases/find-journal-articles.html
+http://oxford.library.emory.edu/library-materials/collections/databases/finding-journal-articles.html
+http://oxford.library.emory.edu/library-materials/collections/databases/scholarly-journals.html
+http://test.web.library.emory.edu/
+http://test.oxford.library.emory.edu/
+http://test.health.library.emory.edu/
+contains:?
+contains:&
+contains:#
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="library-sco">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://sco.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="librarytemplate">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://template.emory.edu/cascade/wdg/clients/library/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="m2m">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://m2m.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="mail_crdr">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://mailservices.emory.edu/CRDR/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="mail_services">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://mailservices.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="main_library">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+regexp:http://[a-z]+.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="marbl_library">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://rose.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="mathcs">
+              <bad_urls><![CDATA[
+http://www.mathcs.emory.edu/news/
+http://www.mathcs.emory.edu/events/
+http://www.mathcs.emory.edu/~
+contains:http://www.mathcs.emory.edu/rooms.php
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.mathcs.emory.edu/site/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="mdp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://web.gs.emory.edu/mdp/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="med">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="medapps">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://medapps.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="metadata_working_group">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://metadata.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="millerward">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://millerward.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="molvis">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.molvis.org/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="musicmedia_library">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://musicmedia.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="networkprinting">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/printing/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="neurology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://neurology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="neurologyinternal">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://secure.web.emory.edu/neurology/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="neurosciences_initiative">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://neurosciences.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="news_center">
+              <bad_urls><![CDATA[
+http://news.emory.edu/tags/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://news.emory.edu/
+http://shared.web.emory.edu/emory/
+http://shared.web.emory.edu/emory/whsc/
+http://www.emory.edu/EMORY_REPORT/
+http://www.emory.edu/news/Releases/
+http://www.emory.edu/WELCOME/journcontents/releases/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="nia">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://psychiatry.emory.edu/niaproject/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="nursing">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.nursing.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="obm">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://obm.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ofr">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+foundations.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="oit">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="oris">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/oris/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="oxford">
+              <bad_urls><![CDATA[
+http://oxford.emory.edu/catalog/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://oxford.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="oxford_cat">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://oxford.emory.edu/catalog/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="oxford_library">
+              <bad_urls><![CDATA[
+http://oxford.library.emory.edu/library-materials/collections/databases/
+http://test.oxford.library.emory.edu/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://oxford.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="palliative">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://palliative.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="palliativecare">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://palliative.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="pcs_women">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="pcsgq">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.pcsgdqe.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="phi">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://phi.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="phleader">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://ph-leader.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="physicianassistant">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/pa_program/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="pitts">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://pitts.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="planning_budgeting">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://opb.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="ponceclinic">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://poncecrs.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="president">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/president/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="prism">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://prismhealth.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="provost">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://provost.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="psychiatry_faculty_development">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://psychiatry.emory.edu/faculty_development/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="radiology_intranet">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://secure.web.emory.edu/radiology/intranet/faculty_and_staff/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="real_estate">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://realestateservices.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="records_mgt">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://records.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="registrar">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://registrar.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="researchdata">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://researchdata.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="researchtemplates">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+https://researchtemplatelibrary.emory.edu/
+https://researchtemplatelibrary.emory.edu/site-content/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="risk_emory">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://risk.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="rwit">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="saac">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://saac.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="secretary">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/secretary/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="senate">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://senate.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="sleep">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://sleep.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="smokefreehomes">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://smokefreehomes.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="sociology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://sociology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som-fpm">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://fpm.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som-pa-asst-div">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/pa_program/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_alzheimers">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://alzheimers.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_bulletin">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/bulletin/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_cme">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/cme/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_emergencymedicine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://em.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_epicprogram">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/epicprogram/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_excel">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/excel/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_finance">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/business/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_handbook">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/handbook/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_hematology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/hemonc/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_ichoose">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://ichoose/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_masters_anesthesiology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://masters/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_mdphd">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/education/MDPHD/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_micro_immun_sis">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://sis2014.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_microbiology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://microbiology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_msp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.pharm.emory.edu/
+http://pharm.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_orthopedics">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.ortho.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_pathology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://pathology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_psychiatry">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://psychiatry.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_radiation_oncology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://radiationoncology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_radiology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.radiology.emory.edu/
+http://radiology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_rehab">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://rehabmed.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_seatec">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://seatec.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_staffdevelopment">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/staff/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_studentportal">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/students/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_summer_camp">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="som_urology">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://urology.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="sound_science">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://whsc.emory.edu/soundscience/
+http://www.whsc.emory.edu/soundscience/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="strategicplan">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/strategicplan/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="student_conduct">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.conduct.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="systemsimaging">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://corelabs.emory.edu/csi/
+http://www.corelabs.emory.edu/csi/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="tacenters">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.tacenters.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="template">
+              <bad_urls><![CDATA[
+http://template.emory.edu/cascade/wdg/
+http://template.emory.edu/assets/wdg/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://template.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="templateweb">
+              <bad_urls><![CDATA[
+http://template.emory.edu/cascade/wdg/
+http://template.emory.edu/assets/wdg/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://template.web.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="testcollection">
+              <bad_urls><![CDATA[
+http://testcollection.emory.edu/calendar/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://testcollection.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="testing">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="theateranddance">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://theateranddance.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="tibet">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://tibet.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="undergrad_admissions">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://apply.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="urbanhealthinitiative">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://urbanhealthinitiative.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="uts_learning_management">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://it.emory.edu/learning_management/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="va">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://med.emory.edu/vamc/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="vulnerability">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://web.gs.emory.edu/vulnerability/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="wcc">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://mch.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="weareemory">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://weare.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="whsc">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://whsc.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="whsc_culture">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://whsc.emory.edu/culture/
+https://secure.web.emory.edu/whsc/culture/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="winshipcancer">
+              <bad_urls><![CDATA[
+www.winshipcancer.emory.edu/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+winshipcancer.emory.edu/
+apps.winshipcancer.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="winshipcancer_magazine">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+winshipcancer.emory.edu/magazine/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="womens_center">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://womenscenter.emory.edu/
+http://www.womenscenter.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="woodruff_library">
+              <bad_urls><![CDATA[
+http://web.library.emory.edu/library-materials/collections/databases/
+http://web.library.emory.edu/library-materials/databases-ebooks-ejournals/databases/
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://web.library.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="worklife">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.worklife.emory.edu/
+https://apps.hr.emory.edu/register/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="www_news">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.emory.edu/news/Releases/
+http://shared.web.emory.edu/emory/news/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="yerkes">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.yerkes.emory.edu/
+http://research.yerkes.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="yerkes_nhpgl">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://www.yerkes.emory.edu/nhp_genomics_core/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+          <collection Name="yti">
+              <bad_urls><![CDATA[
+
+              ]]></bad_urls>
+              <good_urls><![CDATA[
+http://yti.emory.edu/
+              ]]></good_urls>
+              <prerequisite_results><![CDATA[
+20
+              ]]></prerequisite_results>
+              <testwords><![CDATA[
+
+              ]]></testwords>
+          </collection>
+      </collections>

@@ -1,0 +1,962 @@
+[
+  {
+    "url_pattern": "Default - main collection - *.emory.edu",
+    "collection_name": "default_collection",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:vootn8ijbso",
+    "cse_id": "017001689490773891133:vootn8ijbso"
+  },
+  {
+    "url_pattern": "emoryhealthcare.org",
+    "collection_name": "emoryhealthcare",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:8vedm0zw3zw",
+    "cse_id": "017001689490773891133:8vedm0zw3zw"
+  },
+  {
+    "url_pattern": "news.emory.edu",
+    "collection_name": "news_center",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:kil2xabaz80",
+    "cse_id": "017001689490773891133:kil2xabaz80"
+  },
+  {
+    "url_pattern": "hr.emory.edu",
+    "collection_name": "hr",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:inbxlb6nch0",
+    "cse_id": "017001689490773891133:inbxlb6nch0"
+  },
+  {
+    "url_pattern": "med.emory.edu",
+    "collection_name": "school_medicine",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:jhb59icyzak",
+    "cse_id": "017001689490773891133:jhb59icyzak"
+  },
+  {
+    "url_pattern": "emory_magazine - www.emory.edu/EMORY_MAGAZINE/issues/*",
+    "collection_name": "emory_magazine",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:zmesmhk7mio",
+    "cse_id": "017001689490773891133:zmesmhk7mio"
+  },
+  {
+    "url_pattern": "policies.emory.edu",
+    "collection_name": "Policies",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:rs7gawbyxfo",
+    "cse_id": "017001689490773891133:rs7gawbyxfo"
+  },
+  {
+    "url_pattern": "brain_health - news.emory.edu/features/brain/*",
+    "collection_name": "brain_health",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:d8ic6wscqls",
+    "cse_id": "017001689490773891133:d8ic6wscqls"
+  },
+  {
+    "url_pattern": "datagovernance.emory.edu",
+    "collection_name": "datagovernance",
+    "CSE URL": "https://cse.google.com/cse?cx=017001689490773891133:qoukdwfovd0",
+    "cse_id": "017001689490773891133:qoukdwfovd0"
+  },
+  {
+    "url_pattern": "cpc.emory.edu",
+    "collection_name": "cardiology",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:8nrjqwdayze",
+    "cse_id": "009705428503751149709:8nrjqwdayze"
+  },
+  {
+    "url_pattern": "escape.emory.edu",
+    "collection_name": "escape",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:sdodsnv9uko",
+    "cse_id": "009705428503751149709:sdodsnv9uko"
+  },
+  {
+    "url_pattern": "ehso.emory.edu",
+    "collection_name": "ehso",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:fz0_helcily",
+    "cse_id": "009705428503751149709:fz0_helcily"
+  },
+  {
+    "url_pattern": "canvas-support.emory.edu",
+    "collection_name": "canvas",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:4o0jikqdhia",
+    "cse_id": "009705428503751149709:4o0jikqdhia"
+  },
+  {
+    "url_pattern": "urc.emory.edu",
+    "collection_name": "urc",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:vgabeeqzsxk",
+    "cse_id": "009705428503751149709:vgabeeqzsxk"
+  },
+  {
+    "url_pattern": "ichoosekidney.emory.edu",
+    "collection_name": "som_ichoose",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:vfqtgeot5um",
+    "cse_id": "009705428503751149709:vfqtgeot5um"
+  },
+  {
+    "url_pattern": "gynobmagazine.emory.edu",
+    "collection_name": "gynobmag",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:g34_lykkbm0",
+    "cse_id": "009705428503751149709:g34_lykkbm0"
+  },
+  {
+    "url_pattern": "factorviii.emory.edu",
+    "collection_name": "factor",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:ee2kccqpglk",
+    "cse_id": "009705428503751149709:ee2kccqpglk"
+  },
+  {
+    "url_pattern": "eitm.emory.edu",
+    "collection_name": "eitm",
+    "CSE URL": "https://cse.google.com/cse?cx=009705428503751149709:9x1kg4fudoa",
+    "cse_id": "009705428503751149709:9x1kg4fudoa"
+  },
+  {
+    "url_pattern": "PDRG - http://www.pediatrics.emory.edu/diabetes/",
+    "collection_name": "PDRG",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:fuwjij2mxrc",
+    "cse_id": "010430696289832316508:fuwjij2mxrc"
+  },
+  {
+    "url_pattern": "arthistory.emory.edu",
+    "collection_name": "arthistory",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:zxe-m39wv0g",
+    "cse_id": "010430696289832316508:zxe-m39wv0g"
+  },
+  {
+    "url_pattern": "apply.emory.edu",
+    "collection_name": "apply",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:bizc5hzqbeu",
+    "cse_id": "010430696289832316508:bizc5hzqbeu"
+  },
+  {
+    "url_pattern": "cfar.emory.edu",
+    "collection_name": "cfar",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:c-n1u6g9tia",
+    "cse_id": "010430696289832316508:c-n1u6g9tia"
+  },
+  {
+    "url_pattern": "halle.emory.edu",
+    "collection_name": "halle",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:r9rfzhurqvi",
+    "cse_id": "010430696289832316508:r9rfzhurqvi"
+  },
+  {
+    "url_pattern": "js.emory.edu -Jewish Studies",
+    "collection_name": "js",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:lc8jx3c9rno",
+    "cse_id": "010430696289832316508:lc8jx3c9rno"
+  },
+  {
+    "url_pattern": "winshipcancer.emory.edu",
+    "collection_name": "winshipcancer",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:7lv2hww6vco",
+    "cse_id": "010430696289832316508:7lv2hww6vco"
+  },
+  {
+    "url_pattern": "winshipcancer_magazine - winshipcancer.emory.edu/magazine",
+    "collection_name": "winshipcancer_magazine",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:uaug23ere7y",
+    "cse_id": "010430696289832316508:uaug23ere7y"
+  },
+  {
+    "url_pattern": "studentaid.emory.edu",
+    "collection_name": "financialaid",
+    "CSE URL": "https://cse.google.com/cse?cx=010430696289832316508:g4gne_i8vnu",
+    "cse_id": "010430696289832316508:g4gne_i8vnu"
+  },
+  {
+    "url_pattern": "psychiatry.emory.edu",
+    "collection_name": "som_psychiatry",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:fiqwpqes1kk",
+    "cse_id": "000009529576923514897:fiqwpqes1kk"
+  },
+  {
+    "url_pattern": "pediatrics.emory.edu",
+    "collection_name": "Pediatrics",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:nijhdk_bbnc",
+    "cse_id": "000009529576923514897:nijhdk_bbnc"
+  },
+  {
+    "url_pattern": "palliative.emory.edu",
+    "collection_name": "palliativecare",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:4cenawwf5ju",
+    "cse_id": "000009529576923514897:4cenawwf5ju"
+  },
+  {
+    "url_pattern": "millerward.emory.edu",
+    "collection_name": "millerward",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:g34xvwnxeou",
+    "cse_id": "000009529576923514897:g34xvwnxeou"
+  },
+  {
+    "url_pattern": "devstudies.emory.edu",
+    "collection_name": "devstudies",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:qoxmxrvlhs4",
+    "cse_id": "000009529576923514897:qoxmxrvlhs4"
+  },
+  {
+    "url_pattern": "creativity.emory.edu",
+    "collection_name": "creativity",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:v51ijn_-w3s",
+    "cse_id": "000009529576923514897:v51ijn_-w3s"
+  },
+  {
+    "url_pattern": "compliance.emory.edu",
+    "collection_name": "compliance",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:yaofmhl031o",
+    "cse_id": "000009529576923514897:yaofmhl031o"
+  },
+  {
+    "url_pattern": "alzheimers.emory.edu",
+    "collection_name": "som_alzheimers",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:amt4mh5w8cg",
+    "cse_id": "000009529576923514897:amt4mh5w8cg"
+  },
+  {
+    "url_pattern": "investment.emory.edu",
+    "collection_name": "investment",
+    "CSE URL": "https://cse.google.com/cse?cx=000009529576923514897:wmhnpw52cq0",
+    "cse_id": "000009529576923514897:wmhnpw52cq0"
+  },
+  {
+    "url_pattern": "ortho.emory.edu",
+    "collection_name": "som_orthopedics",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:vqbd9qw1tcc",
+    "cse_id": "012642409200134213326:vqbd9qw1tcc"
+  },
+  {
+    "url_pattern": "sociology.emory.edu",
+    "collection_name": "sociology",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:4exvxbz4w58",
+    "cse_id": "012642409200134213326:4exvxbz4w58"
+  },
+  {
+    "url_pattern": "registrar.emory.edu",
+    "collection_name": "registrar",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:k8yy1usbiwy",
+    "cse_id": "012642409200134213326:k8yy1usbiwy"
+  },
+  {
+    "url_pattern": "neurology.emory.edu",
+    "collection_name": "neurology",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:tz_zyr4fi20",
+    "cse_id": "012642409200134213326:tz_zyr4fi20"
+  },
+  {
+    "url_pattern": "template.emory.edu",
+    "collection_name": "templateweb or template",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:xs-c4jed8ic",
+    "cse_id": "012642409200134213326:xs-c4jed8ic"
+  },
+  {
+    "url_pattern": "rehabmed.emory.edu",
+    "collection_name": "som_rehab",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:wxmtxiuofry",
+    "cse_id": "012642409200134213326:wxmtxiuofry"
+  },
+  {
+    "url_pattern": "poncecrs.emory.edu",
+    "collection_name": "ponceclinic",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:x29bjr0fp_0",
+    "cse_id": "012642409200134213326:x29bjr0fp_0"
+  },
+  {
+    "url_pattern": "metadata.emory.edu",
+    "collection_name": "metadata_working_group",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:gm5cshxexjm",
+    "cse_id": "012642409200134213326:gm5cshxexjm"
+  },
+  {
+    "url_pattern": "medicine.emory.edu",
+    "collection_name": "dept_medicine",
+    "CSE URL": "https://cse.google.com/cse?cx=012642409200134213326:ybcvhrhkc6q",
+    "cse_id": "012642409200134213326:ybcvhrhkc6q"
+  },
+  {
+    "url_pattern": "genetics.emory.edu",
+    "collection_name": "genetics",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:vwunormo5my",
+    "cse_id": "006424371682062825013:vwunormo5my"
+  },
+  {
+    "url_pattern": "cslr.law.emory.edu",
+    "collection_name": "law_cslr",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:cb_f56esklk",
+    "cse_id": "006424371682062825013:cb_f56esklk"
+  },
+  {
+    "url_pattern": "www.ogc.emory.edu",
+    "collection_name": "general_counsel",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:t3feaiafqde",
+    "cse_id": "006424371682062825013:t3feaiafqde"
+  },
+  {
+    "url_pattern": "ece.emory.edu",
+    "collection_name": "ece",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:0fyooh3ax0k",
+    "cse_id": "006424371682062825013:0fyooh3ax0k"
+  },
+  {
+    "url_pattern": "dar.emory.edu",
+    "collection_name": "dar",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:6cgayjij6dg",
+    "cse_id": "006424371682062825013:6cgayjij6dg"
+  },
+  {
+    "url_pattern": "urology.emory.edu",
+    "collection_name": "som_urology",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:35tv2pumjli",
+    "cse_id": "006424371682062825013:35tv2pumjli"
+  },
+  {
+    "url_pattern": "records.emory.edu",
+    "collection_name": "records_mgt",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:cxgutsmrjkj",
+    "cse_id": "006424371682062825013:cxgutsmrjkj"
+  },
+  {
+    "url_pattern": "provost.emory.edu",
+    "collection_name": "provost",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:sjmnox9etms",
+    "cse_id": "006424371682062825013:sjmnox9etms"
+  },
+  {
+    "url_pattern": "italian.emory.edu",
+    "collection_name": "college_italian",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:3xne_6b4hai",
+    "cse_id": "006424371682062825013:3xne_6b4hai"
+  },
+  {
+    "url_pattern": "microbiome.emory.edu",
+    "collection_name": "microbiome",
+    "CSE URL": "https://cse.google.com/cse?cx=006424371682062825013:joqrmau5lbm",
+    "cse_id": "006424371682062825013:joqrmau5lbm"
+  },
+  {
+    "url_pattern": "goizueta.emory.edu/emorybusiness.emory.edu",
+    "collection_name": "goizueta",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:lsspa4fks2q",
+    "cse_id": "000608436768902441039:lsspa4fks2q"
+  },
+  {
+    "url_pattern": "finance.emory.edu",
+    "collection_name": "finance",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:jv5z8wvjy4p",
+    "cse_id": "000608436768902441039:jv5z8wvjy4p"
+  },
+  {
+    "url_pattern": "it.emory.edu/tlt",
+    "collection_name": "canvas",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:csjtaxuxmdd",
+    "cse_id": "000608436768902441039:csjtaxuxmdd"
+  },
+  {
+    "url_pattern": "history.emory.edu",
+    "collection_name": "history",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:0t4i9685is4",
+    "cse_id": "000608436768902441039:0t4i9685is4"
+  },
+  {
+    "url_pattern": "college.emory.edu",
+    "collection_name": "college",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:jtzlp0lie8t",
+    "cse_id": "000608436768902441039:jtzlp0lie8t"
+  },
+  {
+    "url_pattern": "candler.emory.edu",
+    "collection_name": "candler",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:rmusbfljb3g",
+    "cse_id": "000608436768902441039:rmusbfljb3g"
+  },
+  {
+    "url_pattern": "senate.emory.edu",
+    "collection_name": "senate",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:e5jdjvvf8hh",
+    "cse_id": "000608436768902441039:e5jdjvvf8hh"
+  },
+  {
+    "url_pattern": "oxford.emory.edu",
+    "collection_name": "oxford",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:mgocofocllw",
+    "cse_id": "000608436768902441039:mgocofocllw"
+  },
+  {
+    "url_pattern": "ethics.emory.edu",
+    "collection_name": "ethics",
+    "CSE URL": "https://cse.google.com/cse?cx=000608436768902441039:rkpncep2io2",
+    "cse_id": "000608436768902441039:rkpncep2io2"
+  },
+  {
+    "url_pattern": "entice.emory.edu",
+    "collection_name": "entice",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:5ftniddqbfd",
+    "cse_id": "002848175706841541720:5ftniddqbfd"
+  },
+  {
+    "url_pattern": "tibet.emory.edu",
+    "collection_name": "tibet",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:rnyhicwqber",
+    "cse_id": "002848175706841541720:rnyhicwqber"
+  },
+  {
+    "url_pattern": "sleep.emory.edu",
+    "collection_name": "sleep",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:9qjooj2aua8",
+    "cse_id": "002848175706841541720:9qjooj2aua8"
+  },
+  {
+    "url_pattern": "pitts.emory.edu",
+    "collection_name": "pitts",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:olh3zxzurcb",
+    "cse_id": "002848175706841541720:olh3zxzurcb"
+  },
+  {
+    "url_pattern": "pharm.emory.edu",
+    "collection_name": "som_msp",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:7dngr0op3br",
+    "cse_id": "002848175706841541720:7dngr0op3br"
+  },
+  {
+    "url_pattern": "gynob.emory.edu",
+    "collection_name": "gynob",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:eq2tib2j3ga",
+    "cse_id": "002848175706841541720:eq2tib2j3ga"
+  },
+  {
+    "url_pattern": "cphpr.emory.edu",
+    "collection_name": "cphpr",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:ponz3ytcktr",
+    "cse_id": "002848175706841541720:ponz3ytcktr"
+  },
+  {
+    "url_pattern": "aging.emory.edu",
+    "collection_name": "aging",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:xgm0onau9bc",
+    "cse_id": "002848175706841541720:xgm0onau9bc"
+  },
+  {
+    "url_pattern": "www.molvis.org",
+    "collection_name": "molvis",
+    "CSE URL": "https://cse.google.com/cse?cx=002848175706841541720:ejrxxurm8dd",
+    "cse_id": "002848175706841541720:ejrxxurm8dd"
+  },
+  {
+    "url_pattern": "whsc.emory.edu",
+    "collection_name": "whsc",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:qtthukhr4fg",
+    "cse_id": "017487910383688178481:qtthukhr4fg"
+  },
+  {
+    "url_pattern": "saac.emory.edu",
+    "collection_name": "saac",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:ivfvmgv3bj9",
+    "cse_id": "017487910383688178481:ivfvmgv3bj9"
+  },
+  {
+    "url_pattern": "isss.emory.edu",
+    "collection_name": "isss",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:2kzv2mofe1p",
+    "cse_id": "017487910383688178481:2kzv2mofe1p"
+  },
+  {
+    "url_pattern": "fsap.emory.edu",
+    "collection_name": "fsap",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:gqjpbrrlsuc",
+    "cse_id": "017487910383688178481:gqjpbrrlsuc"
+  },
+  {
+    "url_pattern": "best.emory.edu",
+    "collection_name": "best",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:ghafyrnfm5v",
+    "cse_id": "017487910383688178481:ghafyrnfm5v"
+  },
+  {
+    "url_pattern": "arts.emory.edu",
+    "collection_name": "arts",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:oqgjufwb8fa",
+    "cse_id": "017487910383688178481:oqgjufwb8fa"
+  },
+  {
+    "url_pattern": "yti.emory.edu",
+    "collection_name": "yti",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:ksxad7bfsu2",
+    "cse_id": "017487910383688178481:ksxad7bfsu2"
+  },
+  {
+    "url_pattern": "opb.emory.edu",
+    "collection_name": "planning_budgeting",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:xei5zr9wrry",
+    "cse_id": "017487910383688178481:xei5zr9wrry"
+  },
+  {
+    "url_pattern": "obm.emory.edu",
+    "collection_name": "obm",
+    "CSE URL": "https://cse.google.com/cse?cx=017487910383688178481:ddozmminzp8",
+    "cse_id": "017487910383688178481:ddozmminzp8"
+  },
+  {
+    "url_pattern": "mch.emory.edu",
+    "collection_name": "wcc",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:qutcxaqisxc",
+    "cse_id": "014571040772177006069:qutcxaqisxc"
+  },
+  {
+    "url_pattern": "m2m.emory.edu",
+    "collection_name": "m2m",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:osutdjrbk7j",
+    "cse_id": "014571040772177006069:osutdjrbk7j"
+  },
+  {
+    "url_pattern": "ila.emory.edu",
+    "collection_name": "ila",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:v2k9klzodqe",
+    "cse_id": "014571040772177006069:v2k9klzodqe"
+  },
+  {
+    "url_pattern": "iad.emory.edu",
+    "collection_name": "internalaudit",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:llawuenq7yx",
+    "cse_id": "014571040772177006069:llawuenq7yx"
+  },
+  {
+    "url_pattern": "hip.emory.edu",
+    "collection_name": "hip",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:7sw3frzdypg",
+    "cse_id": "014571040772177006069:7sw3frzdypg"
+  },
+  {
+    "url_pattern": "fpm.emory.edu",
+    "collection_name": "som-fpm",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:ve1gz39dtzl",
+    "cse_id": "014571040772177006069:ve1gz39dtzl"
+  },
+  {
+    "url_pattern": "ebi.emory.edu",
+    "collection_name": "business_intel",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:m3f79g9xtxy",
+    "cse_id": "014571040772177006069:m3f79g9xtxy"
+  },
+  {
+    "url_pattern": "che.emory.edu",
+    "collection_name": "humanitarian_emergencies",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:dcawajn2oeb",
+    "cse_id": "014571040772177006069:dcawajn2oeb"
+  },
+  {
+    "url_pattern": "it.emory.edu",
+    "collection_name": "IT",
+    "CSE URL": "https://cse.google.com/cse?cx=014571040772177006069:zo3dmr8jhjz",
+    "cse_id": "014571040772177006069:zo3dmr8jhjz"
+  },
+  {
+    "url_pattern": "gs.emory.edu",
+    "collection_name": "gradschool",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:csbnomaxeov",
+    "cse_id": "003707291012382408588:csbnomaxeov"
+  },
+  {
+    "url_pattern": "georgiactsa.org",
+    "collection_name": "actsi",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:nawb1wjvwk4",
+    "cse_id": "003707291012382408588:nawb1wjvwk4"
+  },
+  {
+    "url_pattern": "predictivehealth.emory.edu",
+    "collection_name": "phi",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:g6cma9ppyax",
+    "cse_id": "003707291012382408588:g6cma9ppyax"
+  },
+  {
+    "url_pattern": "president.emory.edu",
+    "collection_name": "president",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:dhvd5alpdhp",
+    "cse_id": "003707291012382408588:dhvd5alpdhp"
+  },
+  {
+    "url_pattern": "anthropology.emory.edu",
+    "collection_name": "anthro",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:6juzzm0sexi",
+    "cse_id": "003707291012382408588:6juzzm0sexi"
+  },
+  {
+    "url_pattern": "annualgiving.emory.edu",
+    "collection_name": "annualgiving",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:qmfuk1c0oek",
+    "cse_id": "003707291012382408588:qmfuk1c0oek"
+  },
+  {
+    "url_pattern": "www.alumni.emory.edu",
+    "collection_name": "alumni",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:dm442zg0yuj",
+    "cse_id": "003707291012382408588:dm442zg0yuj"
+  },
+  {
+    "url_pattern": "nursing.emory.edu",
+    "collection_name": "nursing",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:mz3bvsjin6m",
+    "cse_id": "003707291012382408588:mz3bvsjin6m"
+  },
+  {
+    "url_pattern": "urbanhealthinitiative.emory.edu",
+    "collection_name": "urbanhealthinitiative",
+    "CSE URL": "https://cse.google.com/cse?cx=003707291012382408588:nceldpkymvq",
+    "cse_id": "003707291012382408588:nceldpkymvq"
+  },
+  {
+    "url_pattern": "humanhealth.emory.edu",
+    "collection_name": "humanhealth",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:fjmbcvcrqte",
+    "cse_id": "013842615218828543644:fjmbcvcrqte"
+  },
+  {
+    "url_pattern": "filmstudies.emory.edu",
+    "collection_name": "filmstudies",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:p8o3wmpfd5e",
+    "cse_id": "013842615218828543644:p8o3wmpfd5e"
+  },
+  {
+    "url_pattern": "docservices.emory.edu",
+    "collection_name": "document_services",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:jo78lc5s8bf",
+    "cse_id": "013842615218828543644:jo78lc5s8bf"
+  },
+  {
+    "url_pattern": "dermatology.emory.edu",
+    "collection_name": "dermatology",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:43b9y8twpqy",
+    "cse_id": "013842615218828543644:43b9y8twpqy"
+  },
+  {
+    "url_pattern": "antibiotics.emory.edu",
+    "collection_name": "arc",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:5a7rfezwhoq",
+    "cse_id": "013842615218828543644:5a7rfezwhoq"
+  },
+  {
+    "url_pattern": "www.yerkes.emory.edu",
+    "collection_name": "yerkes",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:epoehevifvw",
+    "cse_id": "013842615218828543644:epoehevifvw"
+  },
+  {
+    "url_pattern": "radiationoncology.emory.edu",
+    "collection_name": "som_radiation_oncology",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:ljppgw6momu",
+    "cse_id": "013842615218828543644:ljppgw6momu"
+  },
+  {
+    "url_pattern": "www.emoryhistory.emory.edu",
+    "collection_name": "emoryhistory",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:amcm1dxu8o7",
+    "cse_id": "013842615218828543644:amcm1dxu8o7"
+  },
+  {
+    "url_pattern": "www.conduct.emory.edu",
+    "collection_name": "student_conduct",
+    "CSE URL": "https://cse.google.com/cse?cx=013842615218828543644:hhu8fsofqg1",
+    "cse_id": "013842615218828543644:hhu8fsofqg1"
+  },
+  {
+    "url_pattern": "womenscenter.emory.edu",
+    "collection_name": "womens_center",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:vs1ljsleeql",
+    "cse_id": "017544309715236008509:vs1ljsleeql"
+  },
+  {
+    "url_pattern": "researchdata.emory.edu",
+    "collection_name": "researchdata",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:kkzxqqytwvf",
+    "cse_id": "017544309715236008509:kkzxqqytwvf"
+  },
+  {
+    "url_pattern": "microbiology.emory.edu",
+    "collection_name": "som_microbiology",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:11ultgovxmm",
+    "cse_id": "017544309715236008509:11ultgovxmm"
+  },
+  {
+    "url_pattern": "mailservices.emory.edu",
+    "collection_name": "mail_services",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:swoxgcly2si",
+    "cse_id": "017544309715236008509:swoxgcly2si"
+  },
+  {
+    "url_pattern": "prismhealth.emory.edu",
+    "collection_name": "prism",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:bbvjuftjcqc",
+    "cse_id": "017544309715236008509:bbvjuftjcqc"
+  },
+  {
+    "url_pattern": "emorymedicinemagazine.emory.edu",
+    "collection_name": "emorymedicinemagazine",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:bovjzbk2laq",
+    "cse_id": "017544309715236008509:bovjzbk2laq"
+  },
+  {
+    "url_pattern": "publichealthmagazine.emory.edu",
+    "collection_name": "emorypublichealthmagazine",
+    "CSE URL": "https://cse.google.com/cse?cx=017544309715236008509:kflr59ur3ou",
+    "cse_id": "017544309715236008509:kflr59ur3ou"
+  },
+  {
+    "url_pattern": "neurosciences.emory.edu",
+    "collection_name": "neurosciences_initiative",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:h0dygipl9ry",
+    "cse_id": "015640173600119631047:h0dygipl9ry"
+  },
+  {
+    "url_pattern": "pbbregistry.emory.edu",
+    "collection_name": "epidemiology_pbb",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:akzr2vce6zo",
+    "cse_id": "015640173600119631047:akzr2vce6zo"
+  },
+  {
+    "url_pattern": "emoryhealthmagazine.emory.edu",
+    "collection_name": "health_magazine",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:ou3fgkwdni6",
+    "cse_id": "015640173600119631047:ou3fgkwdni6"
+  },
+  {
+    "url_pattern": "realestateservices.emory.edu",
+    "collection_name": "real_estate",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:qyfgvwfsxdx",
+    "cse_id": "015640173600119631047:qyfgvwfsxdx"
+  },
+  {
+    "url_pattern": "equityandinclusion.emory.edu",
+    "collection_name": "equity_inclusion",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:891c8ugdcvr",
+    "cse_id": "015640173600119631047:891c8ugdcvr"
+  },
+  {
+    "url_pattern": "digitalscholarship.emory.edu",
+    "collection_name": "ecds",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:60uulvvrk5r",
+    "cse_id": "015640173600119631047:60uulvvrk5r"
+  },
+  {
+    "url_pattern": "thefriendsofbobbyjones.org",
+    "collection_name": "bobbyjones",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:a3qypbi9mzm",
+    "cse_id": "015640173600119631047:a3qypbi9mzm"
+  },
+  {
+    "url_pattern": "community-diversity.emory.edu",
+    "collection_name": "accd",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:4mtjm7mikjg",
+    "cse_id": "015640173600119631047:4mtjm7mikjg"
+  },
+  {
+    "url_pattern": "www.hopeclinic.emory.edu",
+    "collection_name": "hopeclinic",
+    "CSE URL": "https://cse.google.com/cse?cx=015640173600119631047:glzwefyg3d9",
+    "cse_id": "015640173600119631047:glzwefyg3d9"
+  },
+  {
+    "url_pattern": "smokefreehomes.emory.edu",
+    "collection_name": "smokefreehomes",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:zwlw6cejhw4",
+    "cse_id": "008896597377746333649:zwlw6cejhw4"
+  },
+  {
+    "url_pattern": "facultycouncil.emory.edu",
+    "collection_name": "facultycouncil",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:fl9fr3uoejx",
+    "cse_id": "008896597377746333649:fl9fr3uoejx"
+  },
+  {
+    "url_pattern": "communications.emory.edu",
+    "collection_name": "communications",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:g04jm2cj3uq",
+    "cse_id": "008896597377746333649:g04jm2cj3uq"
+  },
+  {
+    "url_pattern": "ph-leader.emory.edu",
+    "collection_name": "phleader",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:bvbyrrwwk5y",
+    "cse_id": "008896597377746333649:bvbyrrwwk5y"
+  },
+  {
+    "url_pattern": "tacenters.emory.edu",
+    "collection_name": "tacenters",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:pwipuqbi5to",
+    "cse_id": "008896597377746333649:pwipuqbi5to"
+  },
+  {
+    "url_pattern": "employeecouncil.emory.edu",
+    "collection_name": "employee_council",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:tr4vetgovrj",
+    "cse_id": "008896597377746333649:tr4vetgovrj"
+  },
+  {
+    "url_pattern": "www.emory.edu/emeritus",
+    "collection_name": "emerituscollege",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:tm5nu8sma7t",
+    "cse_id": "008896597377746333649:tm5nu8sma7t"
+  },
+  {
+    "url_pattern": "corelabs.emory.edu/csi",
+    "collection_name": "systemsimaging",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:ao8umnxziyq",
+    "cse_id": "008896597377746333649:ao8umnxziyq"
+  },
+  {
+    "url_pattern": "gs.emory.edu/handbook",
+    "collection_name": "laney",
+    "CSE URL": "https://cse.google.com/cse?cx=008896597377746333649:wdzg9lcygao",
+    "cse_id": "008896597377746333649:wdzg9lcygao"
+  },
+  {
+    "url_pattern": "www.emory.edu/events",
+    "collection_name": "events",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:znm90tgkizg",
+    "cse_id": "006000960491680418650:znm90tgkizg"
+  },
+  {
+    "url_pattern": "it.emory.edu/catalog",
+    "collection_name": "it_svc_catalog",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:5v7vyigwuvy",
+    "cse_id": "006000960491680418650:5v7vyigwuvy"
+  },
+  {
+    "url_pattern": "it.emory.edu/office365",
+    "collection_name": "O365",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:unlp7cfj6he",
+    "cse_id": "006000960491680418650:unlp7cfj6he"
+  },
+  {
+    "url_pattern": "hr.emory.edu/eu",
+    "collection_name": "hr",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:nbbm8xojeap",
+    "cse_id": "006000960491680418650:nbbm8xojeap"
+  },
+  {
+    "url_pattern": "psychiatry.emory.edu/niaproject",
+    "collection_name": "nia",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:sx7hrexzcmq",
+    "cse_id": "006000960491680418650:sx7hrexzcmq"
+  },
+  {
+    "url_pattern": "genetics.emory.edu/gc_training",
+    "collection_name": "genetics_training",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:o1kqtit7fqb",
+    "cse_id": "006000960491680418650:o1kqtit7fqb"
+  },
+  {
+    "url_pattern": "apps.hr.emory.edu/register",
+    "collection_name": "worklife",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:koe3feidmjc",
+    "cse_id": "006000960491680418650:koe3feidmjc"
+  },
+  {
+    "url_pattern": "race.emory.edu",
+    "collection_name": "campuslife_multicultural",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:ulglcefyekh",
+    "cse_id": "006000960491680418650:ulglcefyekh"
+  },
+  {
+    "url_pattern": "alumni.emory.edu-emorywire",
+    "collection_name": "alumni_emorywire",
+    "CSE URL": "https://cse.google.com/cse?cx=006000960491680418650:zadl3pam0wj",
+    "cse_id": "006000960491680418650:zadl3pam0wj"
+  },
+  {
+    "url_pattern": "www.emory.edu/commencement",
+    "collection_name": "commencement",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:pxthvtgflbe",
+    "cse_id": "016618345472546043515:pxthvtgflbe"
+  },
+  {
+    "url_pattern": "eyecenter.emory.edu/atlas",
+    "collection_name": "eyecenter_atlas",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:af924fjjstl",
+    "cse_id": "016618345472546043515:af924fjjstl"
+  },
+  {
+    "url_pattern": "oxford.emory.edu/catalog",
+    "collection_name": "oxford_cat",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:smasxondoat",
+    "cse_id": "016618345472546043515:smasxondoat"
+  },
+  {
+    "url_pattern": "global.emory.edu/support",
+    "collection_name": "globalprogramsupport",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:r0rfnexkawd",
+    "cse_id": "016618345472546043515:r0rfnexkawd"
+  },
+  {
+    "url_pattern": "www.yerkes.emory.edu/nhp_genomics_core",
+    "collection_name": "yerkes_nhpgl",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:crtt5tf1xkx",
+    "cse_id": "016618345472546043515:crtt5tf1xkx"
+  },
+  {
+    "url_pattern": "it.emory.edu/clinicalresearchdata",
+    "collection_name": "CRDR",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:1i7le93sce8",
+    "cse_id": "016618345472546043515:1i7le93sce8"
+  },
+  {
+    "url_pattern": "aging.emory.edu/programs/equipped",
+    "collection_name": "equipped",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:sehqrmmbvkb",
+    "cse_id": "016618345472546043515:sehqrmmbvkb"
+  },
+  {
+    "url_pattern": "whsc.emory.edu/soundscience",
+    "collection_name": "sound_science",
+    "CSE URL": "https://cse.google.com/cse?cx=016618345472546043515:mlqyv0ssw5u",
+    "cse_id": "016618345472546043515:mlqyv0ssw5u"
+  },
+  {
+    "url_pattern": "med.emory.edu - gamechangers",
+    "collection_name": "gamechangers",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:boeaqk5eemn",
+    "cse_id": "012321692478151457731:boeaqk5eemn"
+  },
+  {
+    "url_pattern": "med.emory.edu - epicprogram",
+    "collection_name": "som_epicprogram",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:ecq83dbtpxu",
+    "cse_id": "012321692478151457731:ecq83dbtpxu"
+  },
+  {
+    "url_pattern": "med.emory.edu - students",
+    "collection_name": "som_studentportal",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:ntq1k85kpww",
+    "cse_id": "012321692478151457731:ntq1k85kpww"
+  },
+  {
+    "url_pattern": "med.emory.edu - handbook",
+    "collection_name": "som_handbook",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:hsa7ziwowd9",
+    "cse_id": "012321692478151457731:hsa7ziwowd9"
+  },
+  {
+    "url_pattern": "med.emory.edu - aahm",
+    "collection_name": "aahm",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:abkhyyfrhcm",
+    "cse_id": "012321692478151457731:abkhyyfrhcm"
+  },
+  {
+    "url_pattern": "med.emory.edu - excel",
+    "collection_name": "som_excel",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:eymank41nrm",
+    "cse_id": "012321692478151457731:eymank41nrm"
+  },
+  {
+    "url_pattern": "med.emory.edu - vamc",
+    "collection_name": "va",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:moccythqqy6",
+    "cse_id": "012321692478151457731:moccythqqy6"
+  },
+  {
+    "url_pattern": "med.emory.edu - cme",
+    "collection_name": "som_cme",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:ljbrpdh23ek",
+    "cse_id": "012321692478151457731:ljbrpdh23ek"
+  },
+  {
+    "url_pattern": "med.emory.edu - pa",
+    "collection_name": "physicianassistant",
+    "CSE URL": "https://cse.google.com/cse?cx=012321692478151457731:gfgho0avdpu",
+    "cse_id": "012321692478151457731:gfgho0avdpu"
+  }
+]
