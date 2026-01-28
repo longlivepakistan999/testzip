@@ -9,7 +9,6 @@ init_db();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $url = trim($_POST['url'] ?? '');
     $name = trim($_POST['name'] ?? '') ?: null;
-    $auto_scan = isset($_POST['auto_scan']);
 
     if (!$url) {
         flash('URL is required.', 'danger');
@@ -23,13 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        flash('Asset added successfully.', 'success');
-
-        if ($auto_scan) {
-            full_scan($asset_id);
-            flash('Scan completed.', 'info');
-        }
-
+        flash('Asset added (pending scan). Run cron_scan.php to scan.', 'success');
         header("Location: detail.php?id=$asset_id");
         exit;
     }
@@ -53,10 +46,6 @@ require __DIR__ . '/includes/header.php';
                 <div class="mb-3">
                     <label for="name" class="form-label">Display Name (optional)</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="My WordPress Site">
-                </div>
-                <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" name="auto_scan" id="autoScan" checked>
-                    <label class="form-check-label" for="autoScan">Auto-scan after adding</label>
                 </div>
                 <div class="d-flex gap-2">
                     <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add Asset</button>

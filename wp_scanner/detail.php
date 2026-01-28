@@ -1,6 +1,6 @@
 <?php
 /**
- * Asset detail - plugins, themes, scan logs, export.
+ * Asset detail — plugins, themes, scan logs, export.
  */
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/scanner.php';
@@ -86,8 +86,8 @@ require __DIR__ . '/includes/header.php';
             <td><?= $i + 1 ?></td>
             <td><code><?= h($p['slug']) ?></code></td>
             <td><?= h($p['name'] ?: $p['slug']) ?></td>
-            <td><small class="text-muted"><?= h($p['detected_via'] ?: '-') ?></small></td>
-            <td><small><?= h($p['last_seen'] ?: '-') ?></small></td>
+            <td><small class="text-muted"><?= h($p['detected_via'] ?? '-') ?></small></td>
+            <td><small><?= h($p['last_seen'] ?? '-') ?></small></td>
         </tr>
         <?php endforeach; ?>
         </tbody>
@@ -119,7 +119,7 @@ require __DIR__ . '/includes/header.php';
             <td><code><?= h($t['slug']) ?></code></td>
             <td><?= h($t['name'] ?: $t['slug']) ?></td>
             <td><?= $t['is_active'] ? '<span class="badge bg-success">Active</span>' : '<span class="text-muted">-</span>' ?></td>
-            <td><small class="text-muted"><?= h($t['detected_via'] ?: '-') ?></small></td>
+            <td><small class="text-muted"><?= h($t['detected_via'] ?? '-') ?></small></td>
         </tr>
         <?php endforeach; ?>
         </tbody>

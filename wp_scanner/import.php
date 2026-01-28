@@ -1,7 +1,7 @@
 <?php
 /**
- * Import URL list - batch add WordPress assets.
- * Supports URLs with http:// and https:// prefixes.
+ * Import URL list — batch add WordPress assets.
+ * Only inserts into DB. Scanning is handled by cron_scan.php.
  */
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/scanner.php';
@@ -9,37 +9,24 @@ init_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $urls_text = $_POST['urls'] ?? '';
-    $auto_scan = isset($_POST['auto_scan']);
-    $added = 0;
-    $skipped = 0;
-    $scanned = 0;
 
     $lines = preg_split('/\r?\n/', trim($urls_text));
+    $normalized = [];
     foreach ($lines as $line) {
         $url = trim($line);
         if ($url === '') continue;
-
-        $url = normalize_url($url);
-        $asset_id = add_asset($url);
-
-        if ($asset_id === null) {
-            $skipped++;
-            continue;
-        }
-
-        $added++;
-
-        if ($auto_scan) {
-            full_scan($asset_id);
-            $scanned++;
-        }
+        $normalized[] = normalize_url($url);
     }
 
-    $msg = "Imported: $added added, $skipped duplicates skipped.";
-    if ($auto_scan) {
-        $msg .= " Scanned $scanned sites.";
+    if (empty($normalized)) {
+        flash('No valid URLs provided.', 'warning');
+    } else {
+        $result = batch_add_assets($normalized);
+        $msg = "Imported: {$result['added']} added, {$result['skipped']} duplicates skipped.";
+        $msg .= " Pending assets will be scanned by the background worker.";
+        flash($msg, 'success');
     }
-    flash($msg, 'success');
+
     header('Location: index.php');
     exit;
 }
@@ -66,9 +53,10 @@ http://my-wordpress.net" required></textarea>
                         URLs without protocol prefix will default to <code>https://</code>.
                     </div>
                 </div>
-                <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" name="auto_scan" id="autoScan" checked>
-                    <label class="form-check-label" for="autoScan">Auto-scan after importing</label>
+                <div class="alert alert-info py-2">
+                    <i class="bi bi-info-circle"></i>
+                    Imported URLs are saved as <strong>pending</strong>.
+                    Run <code>php cron_scan.php</code> or set up a cron job to scan them in the background.
                 </div>
                 <div class="d-flex gap-2">
                     <button type="submit" class="btn btn-primary"><i class="bi bi-upload"></i> Import</button>
@@ -79,23 +67,19 @@ http://my-wordpress.net" required></textarea>
     </div>
 
     <div class="card mt-4">
-        <div class="card-header"><h5><i class="bi bi-info-circle"></i> Detection Methods</h5></div>
+        <div class="card-header"><h5><i class="bi bi-terminal"></i> Background Scan Commands</h5></div>
         <div class="card-body">
             <table class="table table-sm mb-0">
-                <thead><tr><th>Method</th><th>Detects</th><th>Details</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td><code>/wp-json/</code></td>
-                        <td>Plugins</td>
-                        <td>Identifies plugins via REST API namespaces (e.g., <code>yoast/v1</code>, <code>wc/v3</code>)</td>
-                    </tr>
-                    <tr>
-                        <td>HTML Source</td>
-                        <td>Plugins + Themes</td>
-                        <td>Parses <code>/wp-content/plugins/</code> and <code>/wp-content/themes/</code> references</td>
-                    </tr>
+                    <tr><td><code>php cron_scan.php</code></td><td>Scan up to 100 pending assets</td></tr>
+                    <tr><td><code>php cron_scan.php 500</code></td><td>Scan up to 500 pending assets</td></tr>
+                    <tr><td><code>php cron_scan.php --loop</code></td><td>Run continuously until all scanned</td></tr>
+                    <tr><td><code>php cron_scan.php --loop 200</code></td><td>Continuous, 200 per batch</td></tr>
                 </tbody>
             </table>
+            <div class="mt-2">
+                <small class="text-muted">Cron example: <code>* * * * * php /path/to/cron_scan.php 200 >> /var/log/wp_scan.log 2>&1</code></small>
+            </div>
         </div>
     </div>
 </div>

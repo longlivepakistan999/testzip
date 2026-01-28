@@ -194,7 +194,36 @@ function detect_themes_from_html(?string $html): array
 }
 
 /**
- * Full scan: detect plugins and themes, store in database.
+ * Check if a site is WordPress.
+ * Detects via: wp-json response, HTML markers (wp-content, wp-includes, meta generator).
+ */
+function is_wordpress(?string $html, array $namespaces): bool
+{
+    // wp-json returned valid namespaces with wp/v2
+    if (!empty($namespaces)) {
+        foreach ($namespaces as $ns) {
+            if (strpos(strtolower($ns), 'wp/') === 0) {
+                return true;
+            }
+        }
+    }
+
+    if ($html) {
+        // Check for wp-content or wp-includes in HTML
+        if (preg_match('#/wp-content/|/wp-includes/#i', $html)) {
+            return true;
+        }
+        // Check meta generator tag
+        if (preg_match('#<meta[^>]+content=["\']WordPress#i', $html)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Full scan: detect if WordPress, then detect plugins and themes, store in database.
  */
 function full_scan(int $asset_id): array
 {
@@ -204,7 +233,7 @@ function full_scan(int $asset_id): array
     }
 
     $base_url = normalize_url($asset['url']);
-    $results = ['url' => $base_url, 'plugins' => [], 'themes' => [], 'errors' => []];
+    $results = ['url' => $base_url, 'is_wp' => false, 'plugins' => [], 'themes' => [], 'errors' => []];
 
     // 1. Fetch homepage
     $html = http_get($base_url);
@@ -212,26 +241,38 @@ function full_scan(int $asset_id): array
     // 2. Scan /wp-json/
     $namespaces = scan_wp_json($base_url);
 
-    if (empty($namespaces) && $html === null) {
+    if ($html === null && empty($namespaces)) {
         update_asset_scan($asset_id, 'error');
-        add_scan_log($asset_id, 'error', 'Could not reach site or no WordPress detected');
-        $results['errors'][] = 'Could not reach site or no WordPress detected';
+        mark_asset_wp($asset_id, 0);
+        add_scan_log($asset_id, 'error', 'Could not reach site');
+        $results['errors'][] = 'Could not reach site';
         return $results;
     }
 
-    // 3. Detect plugins from namespaces
+    // 3. Check if WordPress
+    $is_wp = is_wordpress($html, $namespaces);
+    $results['is_wp'] = $is_wp;
+    mark_asset_wp($asset_id, $is_wp ? 1 : 0);
+
+    if (!$is_wp) {
+        update_asset_scan($asset_id, 'not_wp');
+        add_scan_log($asset_id, 'info', 'Not a WordPress site, skipping plugin/theme detection');
+        return $results;
+    }
+
+    // 4. Detect plugins from namespaces
     $ns_plugins = detect_plugins_from_namespaces($namespaces);
 
-    // 4. Detect plugins from HTML
+    // 5. Detect plugins from HTML
     $html_plugins = detect_plugins_from_html($html);
 
-    // 5. Merge (namespace takes priority)
+    // 6. Merge (namespace takes priority)
     $all_plugins = array_merge($html_plugins, $ns_plugins);
 
-    // 6. Detect themes from HTML
+    // 7. Detect themes from HTML
     $themes = detect_themes_from_html($html);
 
-    // 7. Store in database
+    // 8. Store in database
     foreach ($all_plugins as $info) {
         upsert_plugin($asset_id, $info['slug'], $info['name'] ?? null, $info['detected_via'] ?? null);
         $results['plugins'][] = $info;
@@ -242,7 +283,7 @@ function full_scan(int $asset_id): array
         $results['themes'][] = $info;
     }
 
-    // 8. Update asset
+    // 9. Update asset
     update_asset_scan($asset_id, 'scanned');
     add_scan_log($asset_id, 'success',
         'Found ' . count($all_plugins) . ' plugins, ' . count($themes) . ' themes');

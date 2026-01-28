@@ -1,18 +1,30 @@
 <?php
 /**
- * Database configuration and initialization.
+ * Database configuration, CRUD operations, pagination helpers.
+ * Supports MySQL for large-scale asset management (100k+).
  */
 
-define('DB_PATH', __DIR__ . '/../wp_scanner.db');
+// ─── MySQL Configuration ───
+define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
+define('DB_NAME', getenv('DB_NAME') ?: 'wp_scanner');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_CHARSET', 'utf8mb4');
+
+// Pagination
+define('PAGE_SIZE', 100);
 
 function get_db(): PDO
 {
     static $pdo = null;
     if ($pdo === null) {
-        $pdo = new PDO('sqlite:' . DB_PATH);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $pdo->exec('PRAGMA foreign_keys = ON');
+        $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=%s', DB_HOST, DB_PORT, DB_NAME, DB_CHARSET);
+        $pdo = new PDO($dsn, DB_USER, DB_PASS, [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ]);
     }
     return $pdo;
 }
@@ -20,47 +32,61 @@ function get_db(): PDO
 function init_db(): void
 {
     $db = get_db();
+
     $db->exec("
         CREATE TABLE IF NOT EXISTS assets (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            url TEXT NOT NULL UNIQUE,
-            name TEXT,
-            status TEXT DEFAULT 'pending',
-            last_scan TEXT,
-            created_at TEXT DEFAULT (datetime('now'))
-        );
+            id         BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            url        VARCHAR(2048) NOT NULL,
+            name       VARCHAR(512) DEFAULT NULL,
+            is_wp      TINYINT      DEFAULT NULL,
+            status     VARCHAR(32)  DEFAULT 'pending',
+            last_scan  DATETIME     DEFAULT NULL,
+            created_at DATETIME     DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE KEY idx_url (url(768)),
+            KEY idx_status (status),
+            KEY idx_is_wp (is_wp)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ");
 
+    $db->exec("
         CREATE TABLE IF NOT EXISTS plugins (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            asset_id INTEGER NOT NULL,
-            slug TEXT NOT NULL,
-            name TEXT,
-            detected_via TEXT,
-            last_seen TEXT DEFAULT (datetime('now')),
-            FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE,
-            UNIQUE(asset_id, slug)
-        );
+            id           BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            asset_id     BIGINT UNSIGNED NOT NULL,
+            slug         VARCHAR(256) NOT NULL,
+            name         VARCHAR(512) DEFAULT NULL,
+            detected_via VARCHAR(512) DEFAULT NULL,
+            last_seen    DATETIME     DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE KEY idx_asset_slug (asset_id, slug),
+            KEY idx_slug (slug),
+            CONSTRAINT fk_plugin_asset FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ");
 
+    $db->exec("
         CREATE TABLE IF NOT EXISTS themes (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            asset_id INTEGER NOT NULL,
-            slug TEXT NOT NULL,
-            name TEXT,
-            is_active INTEGER DEFAULT 0,
-            detected_via TEXT,
-            last_seen TEXT DEFAULT (datetime('now')),
-            FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE,
-            UNIQUE(asset_id, slug)
-        );
+            id           BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            asset_id     BIGINT UNSIGNED NOT NULL,
+            slug         VARCHAR(256) NOT NULL,
+            name         VARCHAR(512) DEFAULT NULL,
+            is_active    TINYINT      DEFAULT 0,
+            detected_via VARCHAR(512) DEFAULT NULL,
+            last_seen    DATETIME     DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE KEY idx_asset_slug (asset_id, slug),
+            KEY idx_slug (slug),
+            CONSTRAINT fk_theme_asset FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ");
 
+    $db->exec("
         CREATE TABLE IF NOT EXISTS scan_logs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            asset_id INTEGER NOT NULL,
-            scan_time TEXT DEFAULT (datetime('now')),
-            status TEXT,
-            message TEXT,
-            FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE
-        );
+            id        BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            asset_id  BIGINT UNSIGNED NOT NULL,
+            scan_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+            status    VARCHAR(32),
+            message   TEXT,
+            KEY idx_asset_time (asset_id, scan_time),
+            CONSTRAINT fk_log_asset FOREIGN KEY (asset_id) REFERENCES assets(id) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     ");
 }
 
@@ -76,23 +102,118 @@ function add_asset(string $url, ?string $name = null): ?int
         $stmt->execute([$url, $name]);
         return (int) $db->lastInsertId();
     } catch (PDOException $e) {
-        if (strpos($e->getMessage(), 'UNIQUE') !== false) {
+        if ($e->getCode() == 23000) { // Duplicate entry
             return null;
         }
         throw $e;
     }
 }
 
-function get_all_assets(): array
+function batch_add_assets(array $urls): array
 {
     $db = get_db();
-    return $db->query("
-        SELECT a.*,
+    $stmt = $db->prepare('INSERT IGNORE INTO assets (url, name) VALUES (?, ?)');
+    $added = 0;
+    $skipped = 0;
+
+    $db->beginTransaction();
+    try {
+        foreach ($urls as $url) {
+            $url = rtrim(trim($url), '/');
+            if ($url === '') continue;
+            $stmt->execute([$url, $url]);
+            if ($stmt->rowCount() > 0) {
+                $added++;
+            } else {
+                $skipped++;
+            }
+        }
+        $db->commit();
+    } catch (PDOException $e) {
+        $db->rollBack();
+        throw $e;
+    }
+
+    return ['added' => $added, 'skipped' => $skipped];
+}
+
+function count_assets(string $search = '', string $status = '', string $plugin = '', string $theme = ''): int
+{
+    $db = get_db();
+    $sql = 'SELECT COUNT(DISTINCT a.id) FROM assets a';
+    $joins = '';
+    $params = [];
+
+    if ($plugin !== '') {
+        $joins .= ' INNER JOIN plugins p ON p.asset_id = a.id AND p.slug LIKE ?';
+        $params[] = '%' . $plugin . '%';
+    }
+    if ($theme !== '') {
+        $joins .= ' INNER JOIN themes t ON t.asset_id = a.id AND t.slug LIKE ?';
+        $params[] = '%' . $theme . '%';
+    }
+
+    $sql .= $joins . ' WHERE 1=1';
+
+    if ($search !== '') {
+        $sql .= ' AND (a.url LIKE ? OR a.name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    if ($status !== '') {
+        $sql .= ' AND a.status = ?';
+        $params[] = $status;
+    }
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return (int) $stmt->fetchColumn();
+}
+
+function get_assets_page(int $page = 1, string $search = '', string $status = '', string $plugin = '', string $theme = ''): array
+{
+    $db = get_db();
+    $offset = ($page - 1) * PAGE_SIZE;
+
+    $sql = "
+        SELECT DISTINCT a.*,
                (SELECT COUNT(*) FROM plugins WHERE asset_id = a.id) AS plugin_count,
                (SELECT COUNT(*) FROM themes WHERE asset_id = a.id) AS theme_count
         FROM assets a
-        ORDER BY a.created_at DESC
-    ")->fetchAll();
+    ";
+    $joins = '';
+    $params = [];
+
+    if ($plugin !== '') {
+        $joins .= ' INNER JOIN plugins p ON p.asset_id = a.id AND p.slug LIKE ?';
+        $params[] = '%' . $plugin . '%';
+    }
+    if ($theme !== '') {
+        $joins .= ' INNER JOIN themes t ON t.asset_id = a.id AND t.slug LIKE ?';
+        $params[] = '%' . $theme . '%';
+    }
+
+    $sql .= $joins . ' WHERE 1=1';
+
+    if ($search !== '') {
+        $sql .= ' AND (a.url LIKE ? OR a.name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    if ($status !== '') {
+        $sql .= ' AND a.status = ?';
+        $params[] = $status;
+    }
+
+    $sql .= ' ORDER BY a.id DESC LIMIT ? OFFSET ?';
+    $params[] = PAGE_SIZE;
+    $params[] = $offset;
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
 }
 
 function get_asset(int $id): ?array
@@ -114,8 +235,34 @@ function delete_asset(int $id): void
 function update_asset_scan(int $id, string $status = 'scanned'): void
 {
     $db = get_db();
-    $stmt = $db->prepare('UPDATE assets SET status = ?, last_scan = datetime("now") WHERE id = ?');
+    $stmt = $db->prepare('UPDATE assets SET status = ?, last_scan = NOW() WHERE id = ?');
     $stmt->execute([$status, $id]);
+}
+
+function mark_asset_wp(int $id, int $is_wp): void
+{
+    $db = get_db();
+    $stmt = $db->prepare('UPDATE assets SET is_wp = ? WHERE id = ?');
+    $stmt->execute([$is_wp, $id]);
+}
+
+function get_pending_assets(int $limit = 100): array
+{
+    $db = get_db();
+    $stmt = $db->prepare("SELECT * FROM assets WHERE status = 'pending' ORDER BY id ASC LIMIT ?");
+    $stmt->execute([$limit]);
+    return $stmt->fetchAll();
+}
+
+function count_assets_by_status(): array
+{
+    $db = get_db();
+    $rows = $db->query("SELECT status, COUNT(*) AS cnt FROM assets GROUP BY status")->fetchAll();
+    $result = [];
+    foreach ($rows as $r) {
+        $result[$r['status']] = (int) $r['cnt'];
+    }
+    return $result;
 }
 
 // ─── Plugin Operations ───
@@ -125,11 +272,11 @@ function upsert_plugin(int $asset_id, string $slug, ?string $name = null, ?strin
     $db = get_db();
     $stmt = $db->prepare("
         INSERT INTO plugins (asset_id, slug, name, detected_via, last_seen)
-        VALUES (?, ?, ?, ?, datetime('now'))
-        ON CONFLICT(asset_id, slug) DO UPDATE SET
-            name = COALESCE(excluded.name, name),
-            detected_via = COALESCE(excluded.detected_via, detected_via),
-            last_seen = datetime('now')
+        VALUES (?, ?, ?, ?, NOW())
+        ON DUPLICATE KEY UPDATE
+            name = COALESCE(VALUES(name), name),
+            detected_via = COALESCE(VALUES(detected_via), detected_via),
+            last_seen = NOW()
     ");
     $stmt->execute([$asset_id, $slug, $name, $detected_via]);
 }
@@ -142,6 +289,14 @@ function get_plugins(int $asset_id): array
     return $stmt->fetchAll();
 }
 
+function count_plugins(int $asset_id): int
+{
+    $db = get_db();
+    $stmt = $db->prepare('SELECT COUNT(*) FROM plugins WHERE asset_id = ?');
+    $stmt->execute([$asset_id]);
+    return (int) $stmt->fetchColumn();
+}
+
 // ─── Theme Operations ───
 
 function upsert_theme(int $asset_id, string $slug, ?string $name = null, int $is_active = 0, ?string $detected_via = null): void
@@ -149,12 +304,12 @@ function upsert_theme(int $asset_id, string $slug, ?string $name = null, int $is
     $db = get_db();
     $stmt = $db->prepare("
         INSERT INTO themes (asset_id, slug, name, is_active, detected_via, last_seen)
-        VALUES (?, ?, ?, ?, ?, datetime('now'))
-        ON CONFLICT(asset_id, slug) DO UPDATE SET
-            name = COALESCE(excluded.name, name),
-            is_active = excluded.is_active,
-            detected_via = COALESCE(excluded.detected_via, detected_via),
-            last_seen = datetime('now')
+        VALUES (?, ?, ?, ?, ?, NOW())
+        ON DUPLICATE KEY UPDATE
+            name = COALESCE(VALUES(name), name),
+            is_active = VALUES(is_active),
+            detected_via = COALESCE(VALUES(detected_via), detected_via),
+            last_seen = NOW()
     ");
     $stmt->execute([$asset_id, $slug, $name, $is_active, $detected_via]);
 }
@@ -197,23 +352,83 @@ function normalize_url(string $url): string
 
 function flash(string $message, string $type = 'info'): void
 {
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+    if (session_status() === PHP_SESSION_NONE) session_start();
     $_SESSION['flash'][] = ['message' => $message, 'type' => $type];
 }
 
 function get_flashes(): array
 {
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+    if (session_status() === PHP_SESSION_NONE) session_start();
     $flashes = $_SESSION['flash'] ?? [];
     $_SESSION['flash'] = [];
     return $flashes;
 }
 
-function h(string $str): string
+function h(?string $str): string
 {
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars($str ?? '', ENT_QUOTES, 'UTF-8');
+}
+
+function pagination_info(int $total, int $page): array
+{
+    $total_pages = max(1, (int) ceil($total / PAGE_SIZE));
+    $page = max(1, min($page, $total_pages));
+    return [
+        'page'        => $page,
+        'total'       => $total,
+        'total_pages' => $total_pages,
+        'has_prev'    => $page > 1,
+        'has_next'    => $page < $total_pages,
+    ];
+}
+
+function render_pagination(array $pager, string $base_query = ''): string
+{
+    if ($pager['total_pages'] <= 1) return '';
+
+    $sep = $base_query ? '&' : '?';
+    $prefix = $base_query ? $base_query . '&' : '?';
+
+    $html = '<nav><ul class="pagination justify-content-center">';
+
+    // Prev
+    if ($pager['has_prev']) {
+        $html .= '<li class="page-item"><a class="page-link" href="' . $prefix . 'page=' . ($pager['page'] - 1) . '">&laquo;</a></li>';
+    } else {
+        $html .= '<li class="page-item disabled"><span class="page-link">&laquo;</span></li>';
+    }
+
+    // Page numbers (show max 7 around current)
+    $start = max(1, $pager['page'] - 3);
+    $end = min($pager['total_pages'], $pager['page'] + 3);
+
+    if ($start > 1) {
+        $html .= '<li class="page-item"><a class="page-link" href="' . $prefix . 'page=1">1</a></li>';
+        if ($start > 2) $html .= '<li class="page-item disabled"><span class="page-link">...</span></li>';
+    }
+
+    for ($i = $start; $i <= $end; $i++) {
+        if ($i === $pager['page']) {
+            $html .= '<li class="page-item active"><span class="page-link">' . $i . '</span></li>';
+        } else {
+            $html .= '<li class="page-item"><a class="page-link" href="' . $prefix . 'page=' . $i . '">' . $i . '</a></li>';
+        }
+    }
+
+    if ($end < $pager['total_pages']) {
+        if ($end < $pager['total_pages'] - 1) $html .= '<li class="page-item disabled"><span class="page-link">...</span></li>';
+        $html .= '<li class="page-item"><a class="page-link" href="' . $prefix . 'page=' . $pager['total_pages'] . '">' . $pager['total_pages'] . '</a></li>';
+    }
+
+    // Next
+    if ($pager['has_next']) {
+        $html .= '<li class="page-item"><a class="page-link" href="' . $prefix . 'page=' . ($pager['page'] + 1) . '">&raquo;</a></li>';
+    } else {
+        $html .= '<li class="page-item disabled"><span class="page-link">&raquo;</span></li>';
+    }
+
+    $html .= '</ul></nav>';
+    $html .= '<p class="text-center text-muted"><small>Total: ' . number_format($pager['total']) . ' / Page ' . $pager['page'] . ' of ' . $pager['total_pages'] . '</small></p>';
+
+    return $html;
 }
