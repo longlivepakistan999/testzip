@@ -1,6 +1,6 @@
 <?php
 /**
- * 插件/主题总览 — 点击查看关联资产列表
+ * 插件/主题总览 — 查看关联资产跳转独立页面
  */
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/scanner.php';
@@ -10,21 +10,6 @@ $tab    = trim($_GET['tab'] ?? 'plugins');
 if (!in_array($tab, ['plugins', 'themes'])) $tab = 'plugins';
 
 $search = trim($_GET['q'] ?? '');
-$slug   = trim($_GET['slug'] ?? '');
-$page   = max(1, (int) ($_GET['page'] ?? 1));
-
-// 如果选定了某个 slug，展示对应资产列表
-$view_assets = false;
-$comp_type = ($tab === 'themes') ? 'theme' : 'plugin';
-$comp_assets = [];
-$comp_pager = null;
-
-if ($slug !== '') {
-    $view_assets = true;
-    $comp_total = count_assets_by_component($comp_type, $slug);
-    $comp_pager = pagination_info($comp_total, $page);
-    $comp_assets = get_assets_by_component($comp_type, $slug, $comp_pager['page']);
-}
 
 // 总览列表
 $all_plugins = get_all_plugins_summary($search);
@@ -37,6 +22,16 @@ require __DIR__ . '/includes/header.php';
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h2><i class="bi bi-collection"></i> 插件与主题</h2>
+    <div class="d-flex gap-2">
+        <div class="btn-group">
+            <a href="export.php?scope=wp&type=csv" class="btn btn-sm btn-outline-success" title="导出所有WP资产 CSV">
+                <i class="bi bi-filetype-csv"></i> 导出WP资产
+            </a>
+            <a href="export.php?scope=wp&type=json" class="btn btn-sm btn-outline-info" title="导出所有WP资产 JSON">
+                <i class="bi bi-filetype-json"></i> JSON
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- Tab 切换 -->
@@ -74,74 +69,6 @@ require __DIR__ . '/includes/header.php';
 </div>
 </div>
 
-<?php if ($view_assets): ?>
-<!-- 某个插件/主题的关联资产列表 -->
-<div class="card mb-3">
-<div class="card-header d-flex justify-content-between align-items-center">
-    <h5 class="mb-0">
-        <?php if ($comp_type === 'plugin'): ?>
-            <i class="bi bi-puzzle"></i> 插件: <code><?= h($slug) ?></code>
-        <?php else: ?>
-            <i class="bi bi-palette"></i> 主题: <code><?= h($slug) ?></code>
-        <?php endif; ?>
-        <span class="badge bg-info"><?= number_format($comp_pager['total']) ?> 个资产</span>
-    </h5>
-    <a href="components.php?tab=<?= h($tab) ?><?= $search !== '' ? '&q=' . urlencode($search) : '' ?>"
-       class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left"></i> 返回列表</a>
-</div>
-<div class="card-body p-0">
-<?php if ($comp_assets): ?>
-<div class="table-responsive">
-<table class="table table-hover align-middle mb-0">
-<thead>
-    <tr>
-        <th>ID</th>
-        <th>站点</th>
-        <th>插件数</th>
-        <th>主题数</th>
-        <th>状态</th>
-        <th>扫描时间</th>
-        <th>操作</th>
-    </tr>
-</thead>
-<tbody>
-<?php foreach ($comp_assets as $a): ?>
-<tr>
-    <td><?= $a['id'] ?></td>
-    <td>
-        <a href="detail.php?id=<?= $a['id'] ?>" class="text-decoration-none">
-            <strong><?= h($a['name'] ?: $a['url']) ?></strong>
-        </a>
-        <br><small class="text-muted"><?= h($a['url']) ?></small>
-    </td>
-    <td><span class="badge badge-plugin"><?= $a['plugin_count'] ?></span></td>
-    <td><span class="badge badge-theme"><?= $a['theme_count'] ?></span></td>
-    <td><span class="status-<?= h($a['status']) ?>"><?= h($a['status']) ?></span></td>
-    <td><small><?= h($a['last_scan'] ?? '-') ?></small></td>
-    <td>
-        <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-sm btn-outline-primary" title="查看"><i class="bi bi-eye"></i></a>
-    </td>
-</tr>
-<?php endforeach; ?>
-</tbody>
-</table>
-</div>
-<?php
-    $comp_base_qs = '?tab=' . urlencode($tab) . '&slug=' . urlencode($slug);
-    if ($search !== '') $comp_base_qs .= '&q=' . urlencode($search);
-?>
-<div class="p-3">
-<?= render_pagination($comp_pager, $comp_base_qs) ?>
-</div>
-<?php else: ?>
-<div class="empty-state py-3">
-    <p>没有找到使用此<?= $comp_type === 'plugin' ? '插件' : '主题' ?>的资产。</p>
-</div>
-<?php endif; ?>
-</div>
-</div>
-<?php endif; ?>
-
 <!-- 统计摘要 -->
 <div class="row mb-3">
     <div class="col-md-4">
@@ -170,6 +97,7 @@ require __DIR__ . '/includes/header.php';
 <?php
 $items = ($tab === 'plugins') ? $all_plugins : $all_themes;
 $type_label = ($tab === 'plugins') ? '插件' : '主题';
+$comp_type_val = ($tab === 'plugins') ? 'plugin' : 'theme';
 ?>
 <?php if ($items): ?>
 <div class="table-responsive">
@@ -189,7 +117,7 @@ $type_label = ($tab === 'plugins') ? '插件' : '主题';
     $pct = $total_wp > 0 ? round($item['asset_count'] / $total_wp * 100, 1) : 0;
     $bar_color = $pct >= 50 ? 'bg-danger' : ($pct >= 20 ? 'bg-warning' : ($pct >= 5 ? 'bg-info' : 'bg-success'));
 ?>
-<tr class="<?= ($slug === $item['slug']) ? 'table-active' : '' ?>">
+<tr>
     <td><?= $i + 1 ?></td>
     <td><code><?= h($item['slug']) ?></code></td>
     <td><?= h($item['name'] ?: $item['slug']) ?></td>
@@ -202,11 +130,21 @@ $type_label = ($tab === 'plugins') ? '插件' : '主题';
             <small class="text-nowrap"><strong><?= $pct ?>%</strong></small>
         </div>
     </td>
-    <td>
-        <a href="components.php?tab=<?= h($tab) ?>&slug=<?= urlencode($item['slug']) ?><?= $search !== '' ? '&q=' . urlencode($search) : '' ?>"
-           class="btn btn-sm btn-outline-primary">
-            <i class="bi bi-eye"></i> 查看资产
+    <td class="text-nowrap">
+        <a href="component_assets.php?type=<?= h($comp_type_val) ?>&slug=<?= urlencode($item['slug']) ?>"
+           class="btn btn-sm btn-outline-primary" title="查看资产">
+            <i class="bi bi-eye"></i> 查看
         </a>
+        <div class="btn-group ms-1">
+            <a href="export.php?scope=component&comp_type=<?= h($comp_type_val) ?>&slug=<?= urlencode($item['slug']) ?>&type=csv"
+               class="btn btn-sm btn-outline-success" title="导出 CSV">
+                <i class="bi bi-filetype-csv"></i>
+            </a>
+            <a href="export.php?scope=component&comp_type=<?= h($comp_type_val) ?>&slug=<?= urlencode($item['slug']) ?>&type=json"
+               class="btn btn-sm btn-outline-info" title="导出 JSON">
+                <i class="bi bi-filetype-json"></i>
+            </a>
+        </div>
     </td>
 </tr>
 <?php endforeach; ?>

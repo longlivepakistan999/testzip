@@ -522,16 +522,24 @@ function get_all_themes_summary(string $search = ''): array
     return $stmt->fetchAll();
 }
 
-function count_assets_by_component(string $type, string $slug): int
+function count_assets_by_component(string $type, string $slug, string $search = ''): int
 {
     $db = get_db();
     $table = $type === 'theme' ? 'themes' : 'plugins';
-    $stmt = $db->prepare("SELECT COUNT(DISTINCT asset_id) FROM $table WHERE slug = ?");
-    $stmt->execute([$slug]);
+    $sql = "SELECT COUNT(DISTINCT a.id) FROM assets a INNER JOIN $table c ON c.asset_id = a.id AND c.slug = ?";
+    $params = [$slug];
+    if ($search !== '') {
+        $sql .= ' AND (a.url LIKE ? OR a.name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
     return (int) $stmt->fetchColumn();
 }
 
-function get_assets_by_component(string $type, string $slug, int $page = 1): array
+function get_assets_by_component(string $type, string $slug, int $page = 1, string $search = ''): array
 {
     $db = get_db();
     $offset = ($page - 1) * PAGE_SIZE;
@@ -540,11 +548,56 @@ function get_assets_by_component(string $type, string $slug, int $page = 1): arr
                    (SELECT COUNT(*) FROM plugins WHERE asset_id = a.id) AS plugin_count,
                    (SELECT COUNT(*) FROM themes WHERE asset_id = a.id) AS theme_count
             FROM assets a
-            INNER JOIN $table c ON c.asset_id = a.id AND c.slug = ?
-            ORDER BY a.id DESC
-            LIMIT ? OFFSET ?";
+            INNER JOIN $table c ON c.asset_id = a.id AND c.slug = ?";
+    $params = [$slug];
+    if ($search !== '') {
+        $sql .= ' AND (a.url LIKE ? OR a.name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $sql .= " ORDER BY a.id DESC LIMIT ? OFFSET ?";
+    $params[] = PAGE_SIZE;
+    $params[] = $offset;
     $stmt = $db->prepare($sql);
-    $stmt->execute([$slug, PAGE_SIZE, $offset]);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+// ─── Export Queries ───
+
+function get_all_assets(): array
+{
+    $db = get_db();
+    return $db->query("SELECT * FROM assets ORDER BY id ASC")->fetchAll();
+}
+
+function get_all_wp_assets(): array
+{
+    $db = get_db();
+    return $db->query("
+        SELECT a.*,
+               (SELECT COUNT(*) FROM plugins WHERE asset_id = a.id) AS plugin_count,
+               (SELECT COUNT(*) FROM themes WHERE asset_id = a.id) AS theme_count
+        FROM assets a
+        WHERE a.is_wp = 1
+        ORDER BY a.id ASC
+    ")->fetchAll();
+}
+
+function get_all_assets_by_component(string $type, string $slug): array
+{
+    $db = get_db();
+    $table = $type === 'theme' ? 'themes' : 'plugins';
+    $stmt = $db->prepare("
+        SELECT a.*,
+               (SELECT COUNT(*) FROM plugins WHERE asset_id = a.id) AS plugin_count,
+               (SELECT COUNT(*) FROM themes WHERE asset_id = a.id) AS theme_count
+        FROM assets a
+        INNER JOIN $table c ON c.asset_id = a.id AND c.slug = ?
+        ORDER BY a.id ASC
+    ");
+    $stmt->execute([$slug]);
     return $stmt->fetchAll();
 }
 
