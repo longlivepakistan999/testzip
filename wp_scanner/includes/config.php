@@ -417,6 +417,12 @@ function get_notwp_assets_page(int $page = 1, string $search = ''): array
 
 // ─── Component (Plugin / Theme) Listings ───
 
+function count_wp_assets(): int
+{
+    $db = get_db();
+    return (int) $db->query("SELECT COUNT(*) FROM assets WHERE is_wp = 1")->fetchColumn();
+}
+
 function get_all_plugins_summary(string $search = ''): array
 {
     $db = get_db();
@@ -568,7 +574,7 @@ function render_pagination(array $pager, string $base_query = ''): string
     }
 
     $html .= '</ul></nav>';
-    $html .= '<p class="text-center text-muted"><small>Total: ' . number_format($pager['total']) . ' / Page ' . $pager['page'] . ' of ' . $pager['total_pages'] . '</small></p>';
+    $html .= '<p class="text-center text-muted"><small>共 ' . number_format($pager['total']) . ' 条 / 第 ' . $pager['page'] . ' 页，共 ' . $pager['total_pages'] . ' 页</small></p>';
 
     return $html;
 }

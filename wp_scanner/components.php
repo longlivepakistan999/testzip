@@ -29,6 +29,7 @@ if ($slug !== '') {
 // 总览列表
 $all_plugins = get_all_plugins_summary($search);
 $all_themes  = get_all_themes_summary($search);
+$total_wp    = count_wp_assets();
 
 $page_title = '插件与主题 - WP Scanner';
 require __DIR__ . '/includes/header.php';
@@ -141,6 +142,28 @@ require __DIR__ . '/includes/header.php';
 </div>
 <?php endif; ?>
 
+<!-- 统计摘要 -->
+<div class="row mb-3">
+    <div class="col-md-4">
+        <div class="card text-center"><div class="card-body py-2">
+            <small class="text-muted">WP 资产总数</small>
+            <h4 class="mb-0 text-primary"><?= number_format($total_wp) ?></h4>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center"><div class="card-body py-2">
+            <small class="text-muted">插件种类</small>
+            <h4 class="mb-0" style="color:#0d6efd;"><?= number_format(count($all_plugins)) ?></h4>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center"><div class="card-body py-2">
+            <small class="text-muted">主题种类</small>
+            <h4 class="mb-0" style="color:#6f42c1;"><?= number_format(count($all_themes)) ?></h4>
+        </div></div>
+    </div>
+</div>
+
 <!-- 插件/主题总览列表 -->
 <div class="card">
 <div class="card-body p-0">
@@ -157,16 +180,28 @@ $type_label = ($tab === 'plugins') ? '插件' : '主题';
         <th>Slug</th>
         <th>名称</th>
         <th>资产数量</th>
+        <th>占比</th>
         <th>操作</th>
     </tr>
 </thead>
 <tbody>
-<?php foreach ($items as $i => $item): ?>
+<?php foreach ($items as $i => $item):
+    $pct = $total_wp > 0 ? round($item['asset_count'] / $total_wp * 100, 1) : 0;
+    $bar_color = $pct >= 50 ? 'bg-danger' : ($pct >= 20 ? 'bg-warning' : ($pct >= 5 ? 'bg-info' : 'bg-success'));
+?>
 <tr class="<?= ($slug === $item['slug']) ? 'table-active' : '' ?>">
     <td><?= $i + 1 ?></td>
     <td><code><?= h($item['slug']) ?></code></td>
     <td><?= h($item['name'] ?: $item['slug']) ?></td>
     <td><span class="badge bg-info"><?= number_format($item['asset_count']) ?></span></td>
+    <td style="min-width:160px;">
+        <div class="d-flex align-items-center gap-2">
+            <div class="progress flex-grow-1" style="height:18px;">
+                <div class="progress-bar <?= $bar_color ?>" style="width:<?= max($pct, 1) ?>%"></div>
+            </div>
+            <small class="text-nowrap"><strong><?= $pct ?>%</strong></small>
+        </div>
+    </td>
     <td>
         <a href="components.php?tab=<?= h($tab) ?>&slug=<?= urlencode($item['slug']) ?><?= $search !== '' ? '&q=' . urlencode($search) : '' ?>"
            class="btn btn-sm btn-outline-primary">
