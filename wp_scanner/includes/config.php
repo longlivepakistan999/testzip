@@ -263,6 +263,38 @@ function delete_all_assets(): int
     return (int) $db->exec("DELETE FROM assets");
 }
 
+// ─── Rescan Operations ───
+
+function rescan_asset(int $id): void
+{
+    $db = get_db();
+    $stmt = $db->prepare("UPDATE assets SET status = 'pending', is_wp = NULL WHERE id = ?");
+    $stmt->execute([$id]);
+}
+
+function batch_rescan_assets(array $ids): int
+{
+    $db = get_db();
+    $ids = array_filter(array_map('intval', $ids));
+    if (empty($ids)) return 0;
+    $placeholders = implode(',', array_fill(0, count($ids), '?'));
+    $stmt = $db->prepare("UPDATE assets SET status = 'pending', is_wp = NULL WHERE id IN ($placeholders)");
+    $stmt->execute($ids);
+    return $stmt->rowCount();
+}
+
+function rescan_error_assets(): int
+{
+    $db = get_db();
+    return (int) $db->exec("UPDATE assets SET status = 'pending', is_wp = NULL WHERE status = 'error'");
+}
+
+function rescan_notwp_assets(): int
+{
+    $db = get_db();
+    return (int) $db->exec("UPDATE assets SET status = 'pending', is_wp = NULL WHERE is_wp = 0");
+}
+
 function update_asset_scan(int $id, string $status = 'scanned'): void
 {
     $db = get_db();
