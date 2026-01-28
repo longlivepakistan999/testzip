@@ -31,12 +31,15 @@ $flashes = get_flashes();
     <div class="container">
         <a class="navbar-brand" href="index.php"><i class="bi bi-shield-lock"></i> WP Scanner</a>
         <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="index.php"><i class="bi bi-house"></i> Dashboard</a>
-            <a class="nav-link" href="add.php"><i class="bi bi-plus-circle"></i> Add</a>
-            <a class="nav-link" href="import.php"><i class="bi bi-upload"></i> Import</a>
+            <a class="nav-link" href="index.php"><i class="bi bi-house"></i> 仪表盘</a>
+            <a class="nav-link" href="components.php"><i class="bi bi-collection"></i> 插件与主题</a>
+            <a class="nav-link" href="notwp.php"><i class="bi bi-x-circle"></i> 非WP资产</a>
+            <a class="nav-link" href="errors.php"><i class="bi bi-exclamation-triangle"></i> 失败资产</a>
+            <a class="nav-link" href="add.php"><i class="bi bi-plus-circle"></i> 添加</a>
+            <a class="nav-link" href="import.php"><i class="bi bi-upload"></i> 导入</a>
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-download"></i> Export All
+                    <i class="bi bi-download"></i> 导出全部
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="export.php?type=json"><i class="bi bi-filetype-json"></i> JSON</a></li>

@@ -9,7 +9,7 @@ init_db();
 $id = (int) ($_GET['id'] ?? 0);
 $asset = get_asset($id);
 if (!$asset) {
-    flash('Asset not found.', 'danger');
+    flash('资产不存在。', 'danger');
     header('Location: index.php');
     exit;
 }
@@ -33,10 +33,10 @@ require __DIR__ . '/includes/header.php';
         </p>
     </div>
     <div class="d-flex gap-2">
-        <a href="scan.php?id=<?= $id ?>" class="btn btn-scan"><i class="bi bi-search"></i> Re-scan</a>
+        <a href="scan.php?id=<?= $id ?>" class="btn btn-scan"><i class="bi bi-search"></i> 重新扫描</a>
         <div class="dropdown">
             <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="bi bi-download"></i> Export
+                <i class="bi bi-download"></i> 导出
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="export.php?id=<?= $id ?>&type=json"><i class="bi bi-filetype-json"></i> JSON</a></li>
@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
             </ul>
         </div>
         <a href="delete.php?id=<?= $id ?>" class="btn btn-outline-danger"
-           onclick="return confirm('Are you sure?');"><i class="bi bi-trash"></i> Delete</a>
+           onclick="return confirm('确定删除？');"><i class="bi bi-trash"></i> 删除</a>
     </div>
 </div>
 
@@ -52,19 +52,19 @@ require __DIR__ . '/includes/header.php';
 <div class="row mb-4">
     <div class="col-md-4">
         <div class="card text-center"><div class="card-body">
-            <h6 class="text-muted">Plugins</h6>
+            <h6 class="text-muted">插件</h6>
             <h3 class="text-primary"><?= count($plugins) ?></h3>
         </div></div>
     </div>
     <div class="col-md-4">
         <div class="card text-center"><div class="card-body">
-            <h6 class="text-muted">Themes</h6>
+            <h6 class="text-muted">主题</h6>
             <h3 style="color:#6f42c1;"><?= count($themes) ?></h3>
         </div></div>
     </div>
     <div class="col-md-4">
         <div class="card text-center"><div class="card-body">
-            <h6 class="text-muted">Status</h6>
+            <h6 class="text-muted">状态</h6>
             <h3 class="status-<?= h($asset['status']) ?>"><?= h($asset['status']) ?></h3>
         </div></div>
     </div>
@@ -73,13 +73,13 @@ require __DIR__ . '/includes/header.php';
 <!-- Plugins -->
 <div class="card mb-4">
     <div class="card-header">
-        <h5 class="mb-0"><i class="bi bi-puzzle"></i> Plugins <span class="badge badge-plugin"><?= count($plugins) ?></span></h5>
+        <h5 class="mb-0"><i class="bi bi-puzzle"></i> 插件 <span class="badge badge-plugin"><?= count($plugins) ?></span></h5>
     </div>
     <div class="card-body">
     <?php if ($plugins): ?>
         <div class="table-responsive">
         <table class="table table-hover table-sm">
-        <thead><tr><th>#</th><th>Slug</th><th>Name</th><th>Detected Via</th><th>Last Seen</th></tr></thead>
+        <thead><tr><th>#</th><th>Slug</th><th>名称</th><th>检测方式</th><th>最后发现</th></tr></thead>
         <tbody>
         <?php foreach ($plugins as $i => $p): ?>
         <tr>
@@ -96,7 +96,7 @@ require __DIR__ . '/includes/header.php';
     <?php else: ?>
         <div class="empty-state py-3">
             <i class="bi bi-puzzle d-block" style="font-size:2rem;"></i>
-            <p>No plugins detected. Run a scan to discover plugins.</p>
+            <p>未检测到插件。请执行扫描以发现插件。</p>
         </div>
     <?php endif; ?>
     </div>
@@ -105,20 +105,20 @@ require __DIR__ . '/includes/header.php';
 <!-- Themes -->
 <div class="card mb-4">
     <div class="card-header">
-        <h5 class="mb-0"><i class="bi bi-palette"></i> Themes <span class="badge badge-theme"><?= count($themes) ?></span></h5>
+        <h5 class="mb-0"><i class="bi bi-palette"></i> 主题 <span class="badge badge-theme"><?= count($themes) ?></span></h5>
     </div>
     <div class="card-body">
     <?php if ($themes): ?>
         <div class="table-responsive">
         <table class="table table-hover table-sm">
-        <thead><tr><th>#</th><th>Slug</th><th>Name</th><th>Active</th><th>Detected Via</th></tr></thead>
+        <thead><tr><th>#</th><th>Slug</th><th>名称</th><th>激活</th><th>检测方式</th></tr></thead>
         <tbody>
         <?php foreach ($themes as $i => $t): ?>
         <tr>
             <td><?= $i + 1 ?></td>
             <td><code><?= h($t['slug']) ?></code></td>
             <td><?= h($t['name'] ?: $t['slug']) ?></td>
-            <td><?= $t['is_active'] ? '<span class="badge bg-success">Active</span>' : '<span class="text-muted">-</span>' ?></td>
+            <td><?= $t['is_active'] ? '<span class="badge bg-success">已激活</span>' : '<span class="text-muted">-</span>' ?></td>
             <td><small class="text-muted"><?= h($t['detected_via'] ?? '-') ?></small></td>
         </tr>
         <?php endforeach; ?>
@@ -128,7 +128,7 @@ require __DIR__ . '/includes/header.php';
     <?php else: ?>
         <div class="empty-state py-3">
             <i class="bi bi-palette d-block" style="font-size:2rem;"></i>
-            <p>No themes detected. Run a scan to discover themes.</p>
+            <p>未检测到主题。请执行扫描以发现主题。</p>
         </div>
     <?php endif; ?>
     </div>
@@ -136,11 +136,11 @@ require __DIR__ . '/includes/header.php';
 
 <!-- Scan Logs -->
 <div class="card mb-4">
-    <div class="card-header"><h5 class="mb-0"><i class="bi bi-journal-text"></i> Scan History</h5></div>
+    <div class="card-header"><h5 class="mb-0"><i class="bi bi-journal-text"></i> 扫描历史</h5></div>
     <div class="card-body">
     <?php if ($logs): ?>
         <table class="table table-sm">
-        <thead><tr><th>Time</th><th>Status</th><th>Message</th></tr></thead>
+        <thead><tr><th>时间</th><th>状态</th><th>信息</th></tr></thead>
         <tbody>
         <?php foreach ($logs as $l): ?>
         <tr>
@@ -152,11 +152,11 @@ require __DIR__ . '/includes/header.php';
         </tbody>
         </table>
     <?php else: ?>
-        <p class="text-muted mb-0">No scan history.</p>
+        <p class="text-muted mb-0">暂无扫描记录。</p>
     <?php endif; ?>
     </div>
 </div>
 
-<a href="index.php" class="btn btn-secondary mb-4"><i class="bi bi-arrow-left"></i> Back</a>
+<a href="index.php" class="btn btn-secondary mb-4"><i class="bi bi-arrow-left"></i> 返回</a>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

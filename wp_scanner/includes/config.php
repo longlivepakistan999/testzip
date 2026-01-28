@@ -339,6 +339,146 @@ function get_scan_logs(int $asset_id, int $limit = 20): array
     return $stmt->fetchAll();
 }
 
+// ─── Error / Inaccessible Assets ───
+
+function count_error_assets(string $search = ''): int
+{
+    $db = get_db();
+    $sql = "SELECT COUNT(*) FROM assets WHERE status = 'error'";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' AND (url LIKE ? OR name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return (int) $stmt->fetchColumn();
+}
+
+function get_error_assets_page(int $page = 1, string $search = ''): array
+{
+    $db = get_db();
+    $offset = ($page - 1) * PAGE_SIZE;
+    $sql = "SELECT * FROM assets WHERE status = 'error'";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' AND (url LIKE ? OR name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $sql .= ' ORDER BY last_scan DESC, id DESC LIMIT ? OFFSET ?';
+    $params[] = PAGE_SIZE;
+    $params[] = $offset;
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+// ─── Non-WP Assets ───
+
+function count_notwp_assets(string $search = ''): int
+{
+    $db = get_db();
+    $sql = "SELECT COUNT(*) FROM assets WHERE is_wp = 0";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' AND (url LIKE ? OR name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return (int) $stmt->fetchColumn();
+}
+
+function get_notwp_assets_page(int $page = 1, string $search = ''): array
+{
+    $db = get_db();
+    $offset = ($page - 1) * PAGE_SIZE;
+    $sql = "SELECT * FROM assets WHERE is_wp = 0";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' AND (url LIKE ? OR name LIKE ?)';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $sql .= ' ORDER BY id DESC LIMIT ? OFFSET ?';
+    $params[] = PAGE_SIZE;
+    $params[] = $offset;
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+// ─── Component (Plugin / Theme) Listings ───
+
+function get_all_plugins_summary(string $search = ''): array
+{
+    $db = get_db();
+    $sql = "SELECT slug, name, COUNT(DISTINCT asset_id) AS asset_count
+            FROM plugins";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' WHERE slug LIKE ? OR name LIKE ?';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $sql .= " GROUP BY slug, name ORDER BY asset_count DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+function get_all_themes_summary(string $search = ''): array
+{
+    $db = get_db();
+    $sql = "SELECT slug, name, COUNT(DISTINCT asset_id) AS asset_count
+            FROM themes";
+    $params = [];
+    if ($search !== '') {
+        $sql .= ' WHERE slug LIKE ? OR name LIKE ?';
+        $like = '%' . $search . '%';
+        $params[] = $like;
+        $params[] = $like;
+    }
+    $sql .= " GROUP BY slug, name ORDER BY asset_count DESC";
+    $stmt = $db->prepare($sql);
+    $stmt->execute($params);
+    return $stmt->fetchAll();
+}
+
+function count_assets_by_component(string $type, string $slug): int
+{
+    $db = get_db();
+    $table = $type === 'theme' ? 'themes' : 'plugins';
+    $stmt = $db->prepare("SELECT COUNT(DISTINCT asset_id) FROM $table WHERE slug = ?");
+    $stmt->execute([$slug]);
+    return (int) $stmt->fetchColumn();
+}
+
+function get_assets_by_component(string $type, string $slug, int $page = 1): array
+{
+    $db = get_db();
+    $offset = ($page - 1) * PAGE_SIZE;
+    $table = $type === 'theme' ? 'themes' : 'plugins';
+    $sql = "SELECT a.*,
+                   (SELECT COUNT(*) FROM plugins WHERE asset_id = a.id) AS plugin_count,
+                   (SELECT COUNT(*) FROM themes WHERE asset_id = a.id) AS theme_count
+            FROM assets a
+            INNER JOIN $table c ON c.asset_id = a.id AND c.slug = ?
+            ORDER BY a.id DESC
+            LIMIT ? OFFSET ?";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$slug, PAGE_SIZE, $offset]);
+    return $stmt->fetchAll();
+}
+
 // ─── Helpers ───
 
 function normalize_url(string $url): string

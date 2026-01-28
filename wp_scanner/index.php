@@ -25,34 +25,34 @@ if ($plugin !== '') $qs_parts[] = 'plugin=' . urlencode($plugin);
 if ($theme !== '')  $qs_parts[] = 'theme=' . urlencode($theme);
 $base_qs = $qs_parts ? '?' . implode('&', $qs_parts) : '';
 
-$page_title = 'WP Scanner - Dashboard';
+$page_title = 'WP Scanner - 仪表盘';
 require __DIR__ . '/includes/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2><i class="bi bi-speedometer2"></i> Dashboard</h2>
+    <h2><i class="bi bi-speedometer2"></i> 仪表盘</h2>
     <div>
-        <a href="import.php" class="btn btn-outline-primary me-2"><i class="bi bi-upload"></i> Import</a>
-        <a href="add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add</a>
+        <a href="import.php" class="btn btn-outline-primary me-2"><i class="bi bi-upload"></i> 导入</a>
+        <a href="add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> 添加</a>
     </div>
 </div>
 
 <!-- Status Summary -->
 <div class="row mb-3">
     <div class="col-md-3"><div class="card text-center p-2">
-        <small class="text-muted">Total</small>
+        <small class="text-muted">总计</small>
         <strong><?= number_format($total) ?></strong>
     </div></div>
     <div class="col-md-3"><div class="card text-center p-2">
-        <small class="text-muted">Pending</small>
+        <small class="text-muted">待扫描</small>
         <strong class="text-warning"><?= number_format($stats['pending'] ?? 0) ?></strong>
     </div></div>
     <div class="col-md-3"><div class="card text-center p-2">
-        <small class="text-muted">Scanned</small>
+        <small class="text-muted">已扫描</small>
         <strong class="text-success"><?= number_format($stats['scanned'] ?? 0) ?></strong>
     </div></div>
     <div class="col-md-3"><div class="card text-center p-2">
-        <small class="text-muted">Error</small>
+        <small class="text-muted">错误</small>
         <strong class="text-danger"><?= number_format($stats['error'] ?? 0) ?></strong>
     </div></div>
 </div>
@@ -63,28 +63,28 @@ require __DIR__ . '/includes/header.php';
 <form method="GET" class="row g-2 align-items-end">
     <div class="col-md-3">
         <input type="text" class="form-control form-control-sm" name="q"
-               value="<?= h($search) ?>" placeholder="URL / name...">
+               value="<?= h($search) ?>" placeholder="URL / 名称...">
     </div>
     <div class="col-md-2">
         <input type="text" class="form-control form-control-sm" name="plugin"
-               value="<?= h($plugin) ?>" placeholder="Plugin slug...">
+               value="<?= h($plugin) ?>" placeholder="插件 slug...">
     </div>
     <div class="col-md-2">
         <input type="text" class="form-control form-control-sm" name="theme"
-               value="<?= h($theme) ?>" placeholder="Theme slug...">
+               value="<?= h($theme) ?>" placeholder="主题 slug...">
     </div>
     <div class="col-md-2">
         <select name="status" class="form-select form-select-sm">
-            <option value="">All Status</option>
-            <option value="pending" <?= $status === 'pending' ? 'selected' : '' ?>>Pending</option>
-            <option value="scanned" <?= $status === 'scanned' ? 'selected' : '' ?>>Scanned</option>
-            <option value="scanning" <?= $status === 'scanning' ? 'selected' : '' ?>>Scanning</option>
-            <option value="not_wp" <?= $status === 'not_wp' ? 'selected' : '' ?>>Not WP</option>
-            <option value="error" <?= $status === 'error' ? 'selected' : '' ?>>Error</option>
+            <option value="">全部状态</option>
+            <option value="pending" <?= $status === 'pending' ? 'selected' : '' ?>>待扫描</option>
+            <option value="scanned" <?= $status === 'scanned' ? 'selected' : '' ?>>已扫描</option>
+            <option value="scanning" <?= $status === 'scanning' ? 'selected' : '' ?>>扫描中</option>
+            <option value="not_wp" <?= $status === 'not_wp' ? 'selected' : '' ?>>非WP</option>
+            <option value="error" <?= $status === 'error' ? 'selected' : '' ?>>错误</option>
         </select>
     </div>
     <div class="col-md-3 d-flex gap-1">
-        <button type="submit" class="btn btn-sm btn-primary flex-grow-1"><i class="bi bi-search"></i> Search</button>
+        <button type="submit" class="btn btn-sm btn-primary flex-grow-1"><i class="bi bi-search"></i> 搜索</button>
         <a href="index.php" class="btn btn-sm btn-outline-secondary"><i class="bi bi-x"></i></a>
     </div>
 </form>
@@ -100,13 +100,13 @@ require __DIR__ . '/includes/header.php';
 <thead>
     <tr>
         <th>ID</th>
-        <th>Site</th>
+        <th>站点</th>
         <th>WP</th>
-        <th>Plugins</th>
-        <th>Themes</th>
-        <th>Status</th>
-        <th>Last Scan</th>
-        <th>Actions</th>
+        <th>插件</th>
+        <th>主题</th>
+        <th>状态</th>
+        <th>扫描时间</th>
+        <th>操作</th>
     </tr>
 </thead>
 <tbody>
@@ -121,8 +121,8 @@ require __DIR__ . '/includes/header.php';
     </td>
     <td>
         <?php if ($a['is_wp'] === null): ?><span class="text-muted">-</span>
-        <?php elseif ($a['is_wp']): ?><span class="badge bg-success">Yes</span>
-        <?php else: ?><span class="badge bg-secondary">No</span>
+        <?php elseif ($a['is_wp']): ?><span class="badge bg-success">是</span>
+        <?php else: ?><span class="badge bg-secondary">否</span>
         <?php endif; ?>
     </td>
     <td><span class="badge badge-plugin"><?= $a['plugin_count'] ?></span></td>
@@ -140,9 +140,9 @@ require __DIR__ . '/includes/header.php';
     <td><small><?= h($a['last_scan'] ?? '-') ?></small></td>
     <td>
         <div class="btn-group btn-group-sm">
-            <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-outline-primary" title="View"><i class="bi bi-eye"></i></a>
-            <a href="scan.php?id=<?= $a['id'] ?>" class="btn btn-outline-success" title="Scan"><i class="bi bi-search"></i></a>
-            <a href="export.php?id=<?= $a['id'] ?>&type=json" class="btn btn-outline-secondary" title="Export"><i class="bi bi-download"></i></a>
+            <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-outline-primary" title="查看"><i class="bi bi-eye"></i></a>
+            <a href="scan.php?id=<?= $a['id'] ?>" class="btn btn-outline-success" title="扫描"><i class="bi bi-search"></i></a>
+            <a href="export.php?id=<?= $a['id'] ?>&type=json" class="btn btn-outline-secondary" title="导出"><i class="bi bi-download"></i></a>
         </div>
     </td>
 </tr>
@@ -159,13 +159,13 @@ require __DIR__ . '/includes/header.php';
 <?php else: ?>
 <div class="empty-state">
     <i class="bi bi-globe2 d-block"></i>
-    <h4>No assets found</h4>
+    <h4>暂无资产</h4>
     <?php if ($search || $status): ?>
-        <p>No results matching your search. <a href="index.php">Clear filters</a></p>
+        <p>没有匹配的结果。<a href="index.php">清除筛选</a></p>
     <?php else: ?>
-        <p>Add WordPress sites or import a URL list to start.</p>
-        <a href="add.php" class="btn btn-primary me-2"><i class="bi bi-plus-circle"></i> Add</a>
-        <a href="import.php" class="btn btn-outline-primary"><i class="bi bi-upload"></i> Import</a>
+        <p>添加 WordPress 站点或导入 URL 列表开始使用。</p>
+        <a href="add.php" class="btn btn-primary me-2"><i class="bi bi-plus-circle"></i> 添加</a>
+        <a href="import.php" class="btn btn-outline-primary"><i class="bi bi-upload"></i> 导入</a>
     <?php endif; ?>
 </div>
 <?php endif; ?>
