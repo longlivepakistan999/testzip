@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Add Asset - WP Scanner{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="bi bi-plus-circle"></i> Add WordPress Asset</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('add_asset') }}">
+                    <div class="mb-3">
+                        <label for="url" class="form-label">WordPress Site URL <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="url" name="url"
+                               placeholder="https://example.com" required>
+                        <div class="form-text">
+                            Enter the WordPress site URL. The scanner will detect plugins and themes
+                            via <code>/wp-json/</code> API and HTML source analysis.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Display Name (optional)</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                               placeholder="My WordPress Site">
+                        <div class="form-text">A friendly name for this asset. Defaults to URL if left blank.</div>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" name="auto_scan"
+                               id="autoScan" checked>
+                        <label class="form-check-label" for="autoScan">
+                            Auto-scan after adding
+                        </label>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-plus-circle"></i> Add Asset
+                        </button>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Detection Methods Info -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5><i class="bi bi-info-circle"></i> Detection Methods</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr><th>Method</th><th>Detects</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/wp-json/</code></td>
+                            <td>Plugins</td>
+                            <td>Identifies plugins via REST API namespaces (e.g., <code>yoast/v1</code>, <code>wc/v3</code>)</td>
+                        </tr>
+                        <tr>
+                            <td>HTML Source</td>
+                            <td>Plugins + Themes</td>
+                            <td>Parses <code>/wp-content/plugins/</code> and <code>/wp-content/themes/</code> references</td>
+                        </tr>
+                        <tr>
+                            <td><code>style.css</code></td>
+                            <td>Theme Version</td>
+                            <td>Fetches theme stylesheet header for name and version</td>
+                        </tr>
+                        <tr>
+                            <td><code>readme.txt</code></td>
+                            <td>Plugin Version</td>
+                            <td>Checks plugin readme for <code>Stable tag</code> version</td>
+                        </tr>
+                        <tr>
+                            <td>Meta Generator</td>
+                            <td>WP Version</td>
+                            <td>Reads <code>&lt;meta name="generator"&gt;</code> tag</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
