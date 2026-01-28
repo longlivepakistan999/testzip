@@ -78,6 +78,23 @@ function run_batch(int $limit): int
     return $count;
 }
 
+// ─── File Lock (prevent concurrent workers) ───
+
+$lock_file = sys_get_temp_dir() . '/wp_scanner_cron.lock';
+$lock_fp = fopen($lock_file, 'w');
+if (!$lock_fp || !flock($lock_fp, LOCK_EX | LOCK_NB)) {
+    log_msg("Another worker is already running, exiting.");
+    exit(0);
+}
+fwrite($lock_fp, (string) getmypid());
+
+// Release lock on exit
+register_shutdown_function(function () use ($lock_fp, $lock_file) {
+    flock($lock_fp, LOCK_UN);
+    fclose($lock_fp);
+    @unlink($lock_file);
+});
+
 // ─── Main ───
 
 log_msg("WP Scanner worker started (batch=$limit, loop=" . ($loop ? 'yes' : 'no') . ")");
