@@ -22,8 +22,15 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2><i class="bi bi-exclamation-triangle"></i> 无法访问的资产</h2>
-    <span class="badge bg-danger fs-6"><?= number_format($total) ?> 个</span>
+    <h2><i class="bi bi-exclamation-triangle"></i> 无法访问的资产 <span class="badge bg-danger"><?= number_format($total) ?> 个</span></h2>
+    <div class="btn-group">
+        <a href="export.php?scope=error&type=csv" class="btn btn-sm btn-outline-success" title="导出 CSV">
+            <i class="bi bi-filetype-csv"></i> 导出
+        </a>
+        <a href="export.php?scope=error&type=json" class="btn btn-sm btn-outline-info" title="导出 JSON">
+            <i class="bi bi-filetype-json"></i>
+        </a>
+    </div>
 </div>
 
 <!-- 搜索 -->

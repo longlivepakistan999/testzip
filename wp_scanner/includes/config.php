@@ -612,6 +612,18 @@ function get_all_wp_assets(): array
     ")->fetchAll();
 }
 
+function get_all_notwp_assets(): array
+{
+    $db = get_db();
+    return $db->query("SELECT * FROM assets WHERE is_wp = 0 ORDER BY id ASC")->fetchAll();
+}
+
+function get_all_error_assets(): array
+{
+    $db = get_db();
+    return $db->query("SELECT * FROM assets WHERE status = 'error' ORDER BY id ASC")->fetchAll();
+}
+
 function get_all_assets_by_component(string $type, string $slug): array
 {
     $db = get_db();

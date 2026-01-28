@@ -109,7 +109,33 @@ if ($scope === 'wp') {
     exit;
 }
 
-// ─── 3. Export assets by component (plugin/theme slug) ───
+// ─── 3. Export non-WP assets ───
+if ($scope === 'notwp') {
+    $assets = get_all_notwp_assets();
+
+    if ($type === 'csv') {
+        export_assets_csv($assets, 'notwp_assets.csv');
+        exit;
+    }
+
+    export_assets_json($assets, 'notwp_assets.json');
+    exit;
+}
+
+// ─── 4. Export error/failed assets ───
+if ($scope === 'error') {
+    $assets = get_all_error_assets();
+
+    if ($type === 'csv') {
+        export_assets_csv($assets, 'error_assets.csv');
+        exit;
+    }
+
+    export_assets_json($assets, 'error_assets.json');
+    exit;
+}
+
+// ─── 5. Export assets by component (plugin/theme slug) ───
 if ($scope === 'component' && $slug !== '') {
     $ct = in_array($comp_type, ['plugin', 'theme']) ? $comp_type : 'plugin';
     $assets = get_all_assets_by_component($ct, $slug);
@@ -125,7 +151,7 @@ if ($scope === 'component' && $slug !== '') {
     exit;
 }
 
-// ─── 4. Default: export all assets (with plugins/themes detail) ───
+// ─── 6. Default: export all assets (with plugins/themes detail) ───
 $assets = get_all_assets();
 $all_data = [];
 foreach ($assets as $a) {
