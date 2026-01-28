@@ -1,6 +1,6 @@
 """
 WordPress Scanner Module.
-Detects plugins, themes, and versions via /wp-json/ REST API and HTML source.
+Detects plugins and themes via /wp-json/ REST API and HTML source.
 """
 
 import re
@@ -168,58 +168,14 @@ def detect_theme_from_html(html_source, base_url):
     matches = set(re.findall(pattern, html_source))
 
     for slug in matches:
-        version = None
-        # Try to find versioned CSS reference for this theme
-        ver_pattern = rf'/wp-content/themes/{re.escape(slug)}/[^"\']*\?ver=([\d.]+)'
-        ver_match = re.search(ver_pattern, html_source)
-        if ver_match:
-            version = ver_match.group(1)
-
-        # Try to fetch style.css for theme metadata
-        style_url = urljoin(base_url + "/", f"wp-content/themes/{slug}/style.css")
-        theme_info = fetch_theme_style_css(style_url)
-
-        theme_name = theme_info.get("name", slug.replace("-", " ").title())
-        theme_version = theme_info.get("version") or version
-
         themes.append({
             "slug": slug,
-            "name": theme_name,
-            "version": theme_version,
+            "name": slug.replace("-", " ").title(),
             "is_active": 1,
-            "detected_via": "HTML source + style.css"
+            "detected_via": "HTML source"
         })
 
     return themes
-
-
-def fetch_theme_style_css(style_url):
-    """Fetch and parse a theme's style.css for metadata."""
-    info = {}
-    try:
-        resp = requests.get(style_url, headers=HEADERS, timeout=REQUEST_TIMEOUT,
-                            allow_redirects=True, verify=False)
-        if resp.status_code == 200:
-            text = resp.text[:4096]  # Only need the header block
-
-            name_match = re.search(r'Theme Name:\s*(.+)', text)
-            if name_match:
-                info["name"] = name_match.group(1).strip()
-
-            ver_match = re.search(r'Version:\s*([\d.]+)', text)
-            if ver_match:
-                info["version"] = ver_match.group(1).strip()
-
-            author_match = re.search(r'Author:\s*(.+)', text)
-            if author_match:
-                info["author"] = author_match.group(1).strip()
-
-            desc_match = re.search(r'Description:\s*(.+)', text)
-            if desc_match:
-                info["description"] = desc_match.group(1).strip()
-    except requests.RequestException:
-        pass
-    return info
 
 
 def detect_plugins_from_html(html_source, base_url):
@@ -233,37 +189,13 @@ def detect_plugins_from_html(html_source, base_url):
     matches = set(re.findall(pattern, html_source))
 
     for slug in matches:
-        version = None
-        # Try to find version from ?ver= parameter
-        ver_pattern = rf'/wp-content/plugins/{re.escape(slug)}/[^"\']*\?ver=([\d.]+)'
-        ver_match = re.search(ver_pattern, html_source)
-        if ver_match:
-            version = ver_match.group(1)
-
         plugins[slug] = {
             "slug": slug,
             "name": slug.replace("-", " ").title(),
-            "version": version,
             "detected_via": "HTML source (wp-content/plugins/)"
         }
 
     return plugins
-
-
-def try_fetch_plugin_version(base_url, plugin_slug):
-    """Try to get plugin version from readme.txt."""
-    readme_url = urljoin(base_url + "/", f"wp-content/plugins/{plugin_slug}/readme.txt")
-    try:
-        resp = requests.get(readme_url, headers=HEADERS, timeout=REQUEST_TIMEOUT,
-                            allow_redirects=True, verify=False)
-        if resp.status_code == 200:
-            text = resp.text[:4096]
-            ver_match = re.search(r'Stable tag:\s*([\d.]+)', text, re.IGNORECASE)
-            if ver_match:
-                return ver_match.group(1)
-    except requests.RequestException:
-        pass
-    return None
 
 
 def fetch_homepage(base_url):
@@ -281,9 +213,8 @@ def fetch_homepage(base_url):
 def full_scan(asset_id):
     """
     Perform a full scan on an asset. Detects:
-    - WordPress version
-    - Plugins (via wp-json namespaces + HTML source + readme.txt)
-    - Themes (via HTML source + style.css)
+    - Plugins (via wp-json namespaces + HTML source)
+    - Themes (via HTML source)
     Stores results in database.
     """
     asset = db.get_asset(asset_id)
@@ -324,25 +255,15 @@ def full_scan(asset_id):
     # 6. Merge plugin detections
     all_plugins = {**html_plugins, **ns_plugins}  # namespace data takes priority
 
-    # 7. Try to get versions from readme.txt for plugins without versions
-    for slug, info in all_plugins.items():
-        if not info.get("version"):
-            readme_ver = try_fetch_plugin_version(base_url, slug)
-            if readme_ver:
-                info["version"] = readme_ver
-                info["detected_via"] = (info.get("detected_via", "") + " + readme.txt").strip(" +")
-
-    # 8. Detect themes from HTML source
+    # 7. Detect themes from HTML source
     themes = detect_theme_from_html(html_source, base_url)
 
-    # 9. Store results in database
+    # 8. Store results in database
     for slug, info in all_plugins.items():
         db.upsert_plugin(
             asset_id=asset_id,
             slug=slug,
             name=info.get("name"),
-            version=info.get("version"),
-            description=info.get("description"),
             detected_via=info.get("detected_via"),
         )
         results["plugins"].append(info)
@@ -352,13 +273,12 @@ def full_scan(asset_id):
             asset_id=asset_id,
             slug=theme["slug"],
             name=theme.get("name"),
-            version=theme.get("version"),
             is_active=theme.get("is_active", 0),
             detected_via=theme.get("detected_via"),
         )
         results["themes"].append(theme)
 
-    # 10. Update asset record
+    # 9. Update asset record
     db.update_asset_scan(asset_id, wp_version=wp_version, status="scanned")
     db.add_scan_log(asset_id, "success",
                     f"Found {len(all_plugins)} plugins, {len(themes)} themes")

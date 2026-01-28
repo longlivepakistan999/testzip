@@ -180,13 +180,13 @@ def export_csv(asset_id):
 
     output = io.StringIO()
     writer = csv.writer(output)
-    writer.writerow(["Type", "Slug", "Name", "Version", "Detected Via", "Last Seen"])
+    writer.writerow(["Type", "Slug", "Name", "Detected Via", "Last Seen"])
 
     for p in data["plugins"]:
-        writer.writerow(["plugin", p["slug"], p["name"], p.get("version", ""),
+        writer.writerow(["plugin", p["slug"], p["name"],
                          p.get("detected_via", ""), p.get("last_seen", "")])
     for t in data["themes"]:
-        writer.writerow(["theme", t["slug"], t["name"], t.get("version", ""),
+        writer.writerow(["theme", t["slug"], t["name"],
                          t.get("detected_via", ""), t.get("last_seen", "")])
 
     csv_content = output.getvalue()
@@ -215,19 +215,19 @@ def export_all_csv():
 
     output = io.StringIO()
     writer = csv.writer(output)
-    writer.writerow(["Site URL", "Site Name", "WP Version", "Type", "Slug",
-                     "Name", "Version", "Detected Via"])
+    writer.writerow(["Site URL", "Site Name", "Type", "Slug",
+                     "Name", "Detected Via"])
 
     for asset_data in data:
         a = asset_data["asset"]
         for p in asset_data["plugins"]:
-            writer.writerow([a["url"], a["name"], a.get("wp_version", ""),
+            writer.writerow([a["url"], a["name"],
                              "plugin", p["slug"], p["name"],
-                             p.get("version", ""), p.get("detected_via", "")])
+                             p.get("detected_via", "")])
         for t in asset_data["themes"]:
-            writer.writerow([a["url"], a["name"], a.get("wp_version", ""),
+            writer.writerow([a["url"], a["name"],
                              "theme", t["slug"], t["name"],
-                             t.get("version", ""), t.get("detected_via", "")])
+                             t.get("detected_via", "")])
 
     return Response(
         output.getvalue(),

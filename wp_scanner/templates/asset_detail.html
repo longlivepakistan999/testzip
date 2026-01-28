@@ -100,7 +100,6 @@
                         <th>#</th>
                         <th>Plugin Slug</th>
                         <th>Name</th>
-                        <th>Version</th>
                         <th>Detected Via</th>
                         <th>Last Seen</th>
                     </tr>
@@ -111,13 +110,6 @@
                         <td>{{ loop.index }}</td>
                         <td><code>{{ plugin.slug }}</code></td>
                         <td>{{ plugin.name or plugin.slug }}</td>
-                        <td>
-                            {% if plugin.version %}
-                            <span class="badge bg-success">{{ plugin.version }}</span>
-                            {% else %}
-                            <span class="text-muted">unknown</span>
-                            {% endif %}
-                        </td>
                         <td><small class="text-muted">{{ plugin.detected_via or '-' }}</small></td>
                         <td><small>{{ plugin.last_seen or '-' }}</small></td>
                     </tr>
@@ -151,7 +143,6 @@
                         <th>#</th>
                         <th>Theme Slug</th>
                         <th>Name</th>
-                        <th>Version</th>
                         <th>Active</th>
                         <th>Detected Via</th>
                     </tr>
@@ -162,13 +153,6 @@
                         <td>{{ loop.index }}</td>
                         <td><code>{{ theme.slug }}</code></td>
                         <td>{{ theme.name or theme.slug }}</td>
-                        <td>
-                            {% if theme.version %}
-                            <span class="badge bg-success">{{ theme.version }}</span>
-                            {% else %}
-                            <span class="text-muted">unknown</span>
-                            {% endif %}
-                        </td>
                         <td>
                             {% if theme.is_active %}
                             <span class="badge bg-success">Active</span>

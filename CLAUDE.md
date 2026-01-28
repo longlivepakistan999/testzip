@@ -43,15 +43,15 @@ testzip/
 
 ### Detection Methods
 
-The scanner identifies WordPress plugins, themes, and versions through:
+The scanner identifies WordPress plugins and themes through:
 
 | Method | Endpoint/Source | Detects |
 |--------|----------------|---------|
 | wp-json API | `GET /wp-json/` | Plugins (via REST API namespaces) |
 | HTML Source | Homepage HTML | Plugins + Themes (via `/wp-content/` paths) |
-| style.css | `/wp-content/themes/{slug}/style.css` | Theme name + version |
-| readme.txt | `/wp-content/plugins/{slug}/readme.txt` | Plugin version (Stable tag) |
-| Meta tag | `<meta name="generator">` | WordPress core version |
+
+Note: Version detection for plugins/themes is intentionally not implemented.
+Unknown namespaces not in `NAMESPACE_PLUGIN_MAP` are still captured by slug inference from the namespace prefix.
 
 ### Key Modules
 
