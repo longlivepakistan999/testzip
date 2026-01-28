@@ -5,7 +5,7 @@
 This repository contains two components:
 
 1. **Emory University Search System** (`search.tgz`) - A legacy PHP/JS institutional search aggregation platform
-2. **WP Scanner** (`wp_scanner/`) - A Python/Flask WordPress plugin & theme detection tool with web interface
+2. **WP Scanner** (`wp_scanner/`) - A PHP WordPress plugin & theme detection tool with web interface
 
 ---
 
@@ -17,18 +17,19 @@ testzip/
 ├── search.tgz                # Emory search system archive (PHP/JS)
 │
 └── wp_scanner/               # WordPress Scanner Application
-    ├── app.py                # Flask web application (routes, views, export)
-    ├── scanner.py            # WordPress detection engine (wp-json, HTML parsing)
-    ├── database.py           # SQLite database layer (assets, plugins, themes)
-    ├── requirements.txt      # Python dependencies (flask, requests)
+    ├── index.php             # Dashboard - asset list
+    ├── add.php               # Add single asset
+    ├── import.php            # Batch import URL list
+    ├── detail.php            # Asset detail (plugins/themes/logs)
+    ├── scan.php              # Trigger scan action
+    ├── delete.php            # Delete asset action
+    ├── export.php            # Export JSON/CSV (single or all)
     ├── wp_scanner.db         # SQLite database (auto-created at runtime)
-    ├── static/
-    │   └── style.css         # Custom CSS styles
-    └── templates/
-        ├── base.html         # Base layout (Bootstrap 5, navbar, flash messages)
-        ├── index.html        # Dashboard - asset list with counts and actions
-        ├── add_asset.html    # Add single asset form + detection info
-        └── asset_detail.html # Asset detail with plugins/themes tables + export
+    └── includes/
+        ├── config.php        # Database init, CRUD functions, helpers
+        ├── scanner.php       # Detection engine (wp-json + HTML parsing)
+        ├── header.php        # HTML header + navbar + flash messages
+        └── footer.php        # HTML footer + Bootstrap JS
 ```
 
 ---
@@ -36,10 +37,10 @@ testzip/
 ## WP Scanner - Architecture
 
 ### Tech Stack
-- **Backend**: Python 3 + Flask
+- **Backend**: PHP 7.4+ (PDO SQLite, curl)
 - **Database**: SQLite (file-based, no external DB needed)
 - **Frontend**: Bootstrap 5 + Bootstrap Icons (CDN)
-- **HTTP Client**: `requests` library for WordPress site scanning
+- **No framework** — plain PHP with includes
 
 ### Detection Methods
 
@@ -53,33 +54,37 @@ The scanner identifies WordPress plugins and themes through:
 Note: Version detection for plugins/themes is intentionally not implemented.
 Unknown namespaces not in `NAMESPACE_PLUGIN_MAP` are still captured by slug inference from the namespace prefix.
 
-### Key Modules
+### Key Files
 
-- **`scanner.py`**: Core detection logic
-  - `full_scan(asset_id)` - Main entry point, runs all detection methods
-  - `scan_wp_json(base_url)` - Fetches `/wp-json/` namespaces
-  - `detect_plugins_from_namespaces(ns)` - Maps namespaces to known plugins
-  - `detect_plugins_from_html(html, url)` - Parses HTML for plugin references
-  - `detect_theme_from_html(html, url)` - Parses HTML for theme references
-  - `NAMESPACE_PLUGIN_MAP` - Dict mapping 40+ known namespaces to plugin slugs
+- **`includes/scanner.php`**: Core detection logic
+  - `full_scan($asset_id)` - Main entry point, runs all detection methods
+  - `scan_wp_json($base_url)` - Fetches `/wp-json/` namespaces
+  - `detect_plugins_from_namespaces($ns)` - Maps namespaces to known plugins
+  - `detect_plugins_from_html($html)` - Parses HTML for plugin references
+  - `detect_themes_from_html($html)` - Parses HTML for theme references
+  - `NAMESPACE_PLUGIN_MAP` - Constant array mapping 40+ known namespaces to plugin slugs
 
-- **`database.py`**: SQLite CRUD operations
-  - Tables: `assets`, `plugins`, `themes`, `scan_logs`
-  - Uses `ON CONFLICT ... DO UPDATE` (upsert) for idempotent scans
-  - Foreign keys with `ON DELETE CASCADE`
+- **`includes/config.php`**: Database layer
+  - `init_db()` - Creates tables on first run
+  - CRUD: `add_asset()`, `get_asset()`, `get_all_assets()`, `delete_asset()`
+  - Upsert: `upsert_plugin()`, `upsert_theme()`
+  - Helpers: `normalize_url()`, `flash()`, `h()` (XSS-safe output)
 
-- **`app.py`**: Flask routes
-  - Web UI: `/`, `/add`, `/asset/<id>`, batch add
-  - API: `/api/assets`, `/api/asset/<id>`, `/api/scan/<id>`
-  - Export: `/asset/<id>/export/json`, `/asset/<id>/export/csv`, `/export/all/json`, `/export/all/csv`
+- **Page files**: Each PHP file is a self-contained page
+  - `index.php` - Dashboard with asset table
+  - `add.php` - Single asset form
+  - `import.php` - Batch URL import (one per line, http/https)
+  - `detail.php` - Asset detail with plugin/theme tables + export
+  - `scan.php` / `delete.php` - Action handlers (redirect after)
+  - `export.php` - JSON/CSV export (`?id=N&type=json` or `?type=csv`)
 
 ### Database Schema
 
 ```sql
-assets (id, url UNIQUE, name, wp_version, status, last_scan, created_at)
-plugins (id, asset_id FK, slug, name, version, description, detected_via, last_seen)
+assets (id, url UNIQUE, name, status, last_scan, created_at)
+plugins (id, asset_id FK, slug, name, detected_via, last_seen)
   UNIQUE(asset_id, slug)
-themes (id, asset_id FK, slug, name, version, is_active, detected_via, last_seen)
+themes (id, asset_id FK, slug, name, is_active, detected_via, last_seen)
   UNIQUE(asset_id, slug)
 scan_logs (id, asset_id FK, scan_time, status, message)
 ```
@@ -92,18 +97,13 @@ scan_logs (id, asset_id FK, scan_time, status, message)
 
 ```bash
 cd wp_scanner
-pip install -r requirements.txt
-python app.py
-# Server starts at http://127.0.0.1:5000
+php -S 0.0.0.0:8000
+# Open http://127.0.0.1:8000
 ```
 
-### No build/test/lint tooling is configured yet.
+Requirements: PHP 7.4+ with `pdo_sqlite` and `curl` extensions.
 
-To run the scanner standalone:
-```bash
-cd wp_scanner
-python -c "import database as db; db.init_db(); print('DB initialized')"
-```
+### No build/test/lint tooling is configured.
 
 ---
 
@@ -125,43 +125,45 @@ This is a read-only archive; no active development is expected on it.
 ## Conventions & Guidelines
 
 ### Code Style
-- **Python**: Standard Python conventions, no formatter configured
-- **Templates**: Jinja2 with Bootstrap 5 classes
-- **Database**: All SQL in `database.py`, use parameterized queries (never string interpolation)
+- **PHP**: Plain PHP, no framework, PSR-adjacent style
+- **HTML output**: Use `h()` helper for all dynamic output (XSS prevention)
+- **Database**: All SQL in `includes/config.php`, always use PDO prepared statements
+- **Page pattern**: Each page includes `config.php` + `scanner.php`, then `header.php` / `footer.php`
 
 ### Security Notes
-- Scanner uses `verify=False` for HTTPS (some WordPress sites have cert issues)
-- `app.secret_key` is hardcoded — change for production deployment
+- Scanner uses `CURLOPT_SSL_VERIFYPEER = false` (some WordPress sites have cert issues)
 - No authentication on the web interface — add before exposing to network
-- Input URLs are normalized but not deeply validated — treat with care
+- Input URLs are normalized via `normalize_url()` — supports both `http://` and `https://`
+- All output uses `h()` (htmlspecialchars) to prevent XSS
 
 ### Adding New Plugin Detections
-To add a new wp-json namespace mapping, edit `NAMESPACE_PLUGIN_MAP` in `scanner.py`:
-```python
-NAMESPACE_PLUGIN_MAP = {
+Edit `NAMESPACE_PLUGIN_MAP` in `includes/scanner.php`:
+```php
+const NAMESPACE_PLUGIN_MAP = [
     ...
-    "new-plugin/v1": ("new-plugin-slug", "New Plugin Display Name"),
-}
+    'new-plugin/v1' => ['new-plugin-slug', 'New Plugin Display Name'],
+];
 ```
 
-### Adding New Routes
-Follow the existing pattern in `app.py`:
-1. Add route function with docstring
-2. Use `db.*` functions for database access
-3. Use `scanner.*` for scan operations
-4. Return `render_template()` for web views, `jsonify()` for API endpoints
+### Adding New Pages
+1. Create a new `.php` file in `wp_scanner/`
+2. Include `includes/config.php` and `includes/scanner.php`
+3. Call `init_db()` at the top
+4. Include `includes/header.php` and `includes/footer.php` for layout
+5. Add navigation link in `includes/header.php` if needed
 
 ### Git Workflow
-- Main development branch: `claude/claude-md-mkxazjynr7jnvqqj-wZ93x`
-- Commit messages should be descriptive and in English
+- Development branch: `claude/claude-md-mkxazjynr7jnvqqj-wZ93x`
+- Commit messages should be descriptive
 - No CI/CD pipeline is configured
 
 ---
 
 ## Common Tasks for AI Assistants
 
-1. **Add new detection method**: Modify `scanner.py`, add detection logic, call from `full_scan()`
-2. **Add new export format**: Add route in `app.py`, use `db.get_asset_full_data()` for data
-3. **Modify UI**: Edit templates in `wp_scanner/templates/`, base layout in `base.html`
-4. **Add database field**: Update schema in `database.py` `init_db()`, update relevant CRUD functions
-5. **Extend namespace map**: Add entries to `NAMESPACE_PLUGIN_MAP` in `scanner.py`
+1. **Add new detection method**: Modify `includes/scanner.php`, add logic, call from `full_scan()`
+2. **Add new export format**: Modify `export.php`, add new `$type` case
+3. **Modify UI**: Edit page PHP files, shared layout in `includes/header.php` + `includes/footer.php`
+4. **Add database field**: Update schema in `includes/config.php` `init_db()`, update CRUD functions
+5. **Extend namespace map**: Add entries to `NAMESPACE_PLUGIN_MAP` in `includes/scanner.php`
+6. **Add new page**: Create `.php` file, include config/scanner/header/footer
