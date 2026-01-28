@@ -223,6 +223,122 @@ function is_wordpress(?string $html, array $namespaces): bool
 }
 
 /**
+ * Concurrent HTTP GET using curl_multi.
+ * @param array $urls  Associative array ['key' => 'url', ...]
+ * @param int   $timeout  Per-request timeout in seconds
+ * @return array ['key' => response_body|null, ...]
+ */
+function http_multi_get(array $urls, int $timeout = 15): array
+{
+    if (empty($urls)) return [];
+
+    $mh = curl_multi_init();
+    $handles = [];
+
+    foreach ($urls as $key => $url) {
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL            => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_TIMEOUT        => $timeout,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_USERAGENT      => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        ]);
+        curl_multi_add_handle($mh, $ch);
+        $handles[$key] = $ch;
+    }
+
+    // Execute all handles concurrently
+    do {
+        $status = curl_multi_exec($mh, $active);
+        if ($active) {
+            curl_multi_select($mh, 1);
+        }
+    } while ($active && $status === CURLM_OK);
+
+    // Collect results
+    $results = [];
+    foreach ($handles as $key => $ch) {
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $body = curl_multi_getcontent($ch);
+        $results[$key] = ($code === 200 && $body !== false && $body !== '') ? $body : null;
+        curl_multi_remove_handle($mh, $ch);
+        curl_close($ch);
+    }
+
+    curl_multi_close($mh);
+    return $results;
+}
+
+/**
+ * Process a single asset's scan result given pre-fetched HTML and wp-json response.
+ * Used by parallel scanner to avoid redundant HTTP requests.
+ */
+function process_asset_scan(int $asset_id, ?string $html, ?string $wp_json_body): array
+{
+    $asset = get_asset($asset_id);
+    if (!$asset) {
+        return ['error' => 'Asset not found'];
+    }
+
+    $results = ['url' => $asset['url'], 'is_wp' => false, 'plugins' => [], 'themes' => [], 'errors' => []];
+
+    // Parse wp-json namespaces
+    $namespaces = [];
+    if ($wp_json_body !== null) {
+        $data = json_decode($wp_json_body, true);
+        if (is_array($data) && isset($data['namespaces'])) {
+            $namespaces = $data['namespaces'];
+        }
+    }
+
+    if ($html === null && empty($namespaces)) {
+        update_asset_scan($asset_id, 'error');
+        mark_asset_wp($asset_id, 0);
+        add_scan_log($asset_id, 'error', 'Could not reach site');
+        $results['errors'][] = 'Could not reach site';
+        return $results;
+    }
+
+    // Check if WordPress
+    $is_wp = is_wordpress($html, $namespaces);
+    $results['is_wp'] = $is_wp;
+    mark_asset_wp($asset_id, $is_wp ? 1 : 0);
+
+    if (!$is_wp) {
+        update_asset_scan($asset_id, 'not_wp');
+        add_scan_log($asset_id, 'info', 'Not a WordPress site, skipping plugin/theme detection');
+        return $results;
+    }
+
+    // Detect plugins from namespaces + HTML
+    $ns_plugins   = detect_plugins_from_namespaces($namespaces);
+    $html_plugins = detect_plugins_from_html($html);
+    $all_plugins  = array_merge($html_plugins, $ns_plugins);
+
+    // Detect themes from HTML
+    $themes = detect_themes_from_html($html);
+
+    // Store in database
+    foreach ($all_plugins as $info) {
+        upsert_plugin($asset_id, $info['slug'], $info['name'] ?? null, $info['detected_via'] ?? null);
+        $results['plugins'][] = $info;
+    }
+    foreach ($themes as $info) {
+        upsert_theme($asset_id, $info['slug'], $info['name'] ?? null, $info['is_active'] ?? 0, $info['detected_via'] ?? null);
+        $results['themes'][] = $info;
+    }
+
+    update_asset_scan($asset_id, 'scanned');
+    add_scan_log($asset_id, 'success',
+        'Found ' . count($all_plugins) . ' plugins, ' . count($themes) . ' themes');
+
+    return $results;
+}
+
+/**
  * Full scan: detect if WordPress, then detect plugins and themes, store in database.
  */
 function full_scan(int $asset_id): array

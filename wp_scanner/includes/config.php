@@ -317,6 +317,33 @@ function get_pending_assets(int $limit = 100): array
     return $stmt->fetchAll();
 }
 
+/**
+ * Atomically claim pending assets (SELECT FOR UPDATE + set status=scanning).
+ * Safe for concurrent workers — each asset is claimed by exactly one worker.
+ */
+function claim_pending_assets(int $limit = 100): array
+{
+    $db = get_db();
+    $db->beginTransaction();
+    try {
+        $stmt = $db->prepare("SELECT * FROM assets WHERE status = 'pending' ORDER BY id ASC LIMIT ? FOR UPDATE");
+        $stmt->execute([$limit]);
+        $assets = $stmt->fetchAll();
+
+        if (!empty($assets)) {
+            $ids = array_column($assets, 'id');
+            $placeholders = implode(',', array_fill(0, count($ids), '?'));
+            $db->prepare("UPDATE assets SET status = 'scanning' WHERE id IN ($placeholders)")->execute($ids);
+        }
+
+        $db->commit();
+        return $assets;
+    } catch (Exception $e) {
+        $db->rollBack();
+        throw $e;
+    }
+}
+
 function count_assets_by_status(): array
 {
     $db = get_db();
