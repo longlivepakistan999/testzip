@@ -46,10 +46,33 @@ require __DIR__ . '/includes/header.php';
 <div class="card">
 <div class="card-body p-0">
 <?php if ($assets): ?>
+<form id="batchForm" method="POST" action="delete.php">
+<input type="hidden" name="action" value="batch">
+<input type="hidden" name="redirect" value="errors.php<?= h($base_qs) ?>">
+
+<div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom bg-light">
+    <div class="d-flex align-items-center gap-2">
+        <span id="selectedCount" class="text-muted small">已选 0 项</span>
+        <button type="submit" class="btn btn-sm btn-outline-danger" id="batchDeleteBtn" disabled
+                onclick="return confirm('确定删除选中的资产及其所有扫描数据？');">
+            <i class="bi bi-trash"></i> 删除选中
+        </button>
+    </div>
+    <form method="POST" action="delete.php" class="d-inline">
+        <input type="hidden" name="action" value="clear_error">
+        <input type="hidden" name="redirect" value="errors.php">
+        <button type="submit" class="btn btn-sm btn-danger"
+                onclick="return confirm('确定清除全部失败资产？此操作不可恢复！');">
+            <i class="bi bi-trash-fill"></i> 清除全部失败资产
+        </button>
+    </form>
+</div>
+
 <div class="table-responsive">
 <table class="table table-hover align-middle mb-0">
 <thead>
     <tr>
+        <th style="width:40px;"><input type="checkbox" id="selectAll" class="form-check-input"></th>
         <th>ID</th>
         <th>站点</th>
         <th>最后扫描</th>
@@ -59,6 +82,7 @@ require __DIR__ . '/includes/header.php';
 <tbody>
 <?php foreach ($assets as $a): ?>
 <tr>
+    <td><input type="checkbox" name="ids[]" value="<?= $a['id'] ?>" class="form-check-input row-check"></td>
     <td><?= $a['id'] ?></td>
     <td>
         <a href="detail.php?id=<?= $a['id'] ?>" class="text-decoration-none">
@@ -71,7 +95,7 @@ require __DIR__ . '/includes/header.php';
         <div class="btn-group btn-group-sm">
             <a href="detail.php?id=<?= $a['id'] ?>" class="btn btn-outline-primary" title="查看"><i class="bi bi-eye"></i></a>
             <a href="scan.php?id=<?= $a['id'] ?>" class="btn btn-outline-success" title="重新扫描"><i class="bi bi-search"></i></a>
-            <a href="delete.php?id=<?= $a['id'] ?>" class="btn btn-outline-danger" title="删除"
+            <a href="delete.php?id=<?= $a['id'] ?>&redirect=errors.php" class="btn btn-outline-danger" title="删除"
                onclick="return confirm('确定删除？');"><i class="bi bi-trash"></i></a>
         </div>
     </td>
@@ -80,6 +104,20 @@ require __DIR__ . '/includes/header.php';
 </tbody>
 </table>
 </div>
+</form>
+
+<script>
+document.getElementById('selectAll').addEventListener('change', function() {
+    document.querySelectorAll('.row-check').forEach(c => c.checked = this.checked);
+    updateCount();
+});
+document.querySelectorAll('.row-check').forEach(c => c.addEventListener('change', updateCount));
+function updateCount() {
+    var n = document.querySelectorAll('.row-check:checked').length;
+    document.getElementById('selectedCount').textContent = '已选 ' + n + ' 项';
+    document.getElementById('batchDeleteBtn').disabled = n === 0;
+}
+</script>
 
 <div class="p-3">
 <?= render_pagination($pager, $base_qs) ?>

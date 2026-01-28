@@ -232,6 +232,37 @@ function delete_asset(int $id): void
     $stmt->execute([$id]);
 }
 
+function batch_delete_assets(array $ids): int
+{
+    $db = get_db();
+    $ids = array_filter(array_map('intval', $ids));
+    if (empty($ids)) return 0;
+    $placeholders = implode(',', array_fill(0, count($ids), '?'));
+    $stmt = $db->prepare("DELETE FROM assets WHERE id IN ($placeholders)");
+    $stmt->execute($ids);
+    return $stmt->rowCount();
+}
+
+function delete_assets_by_status(string $status): int
+{
+    $db = get_db();
+    $stmt = $db->prepare('DELETE FROM assets WHERE status = ?');
+    $stmt->execute([$status]);
+    return $stmt->rowCount();
+}
+
+function delete_notwp_assets(): int
+{
+    $db = get_db();
+    return (int) $db->exec("DELETE FROM assets WHERE is_wp = 0");
+}
+
+function delete_all_assets(): int
+{
+    $db = get_db();
+    return (int) $db->exec("DELETE FROM assets");
+}
+
 function update_asset_scan(int $id, string $status = 'scanned'): void
 {
     $db = get_db();
